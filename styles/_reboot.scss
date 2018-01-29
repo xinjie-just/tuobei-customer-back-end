@@ -1,0 +1,535 @@
+@charset "UTF-8";
+@import "variables";
+//设置所有浏览器中外边距不为零的元素的外边距为零
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+blockquote,
+pre,
+textarea,
+fieldset,
+figure,
+ul,
+ol,
+dl,
+dd,
+menu {
+  margin: 0;
+}
+
+//设置所有浏览器中内填充不为零的元素的内填充为零
+input,
+textarea,
+button,
+select,
+option,
+fieldset,
+legend,
+ul,
+ol,
+menu,
+th,
+td {
+  padding: 0;
+}
+
+//设置所有浏览器中边框不为零的元素的边框为零
+hr,
+progress,
+input,
+textarea,
+button,
+select,
+fieldset {
+  border: 0;
+}
+
+//在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
+html {
+  height: 100%;
+  font-size: $font-size;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+//设置所有元素的盒模型，将内填充和边距算在宽或高之列
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: $text-color;
+  background-color: #ebeff9;
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+  -webkit-overflow-scrolling: touch; /* ios5+ */
+}
+
+//在 IE 9 及低版本浏览器中为下列元素设置为 inline-block 的显示方式
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+//在 iOS 4-7 中为无 controls属性的 audio 元素添加正确的显示方式
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+//在 Chrome, Firefox 和 Opera 中设置垂直方向基线对齐方式
+progress {
+  vertical-align: baseline;
+}
+
+//在 IE 中添加正确的显示方式
+template,
+[hidden] {
+  display: none;
+}
+
+/* ===链接=== */
+
+//在 IE 10 中移除链接被激活后的灰色背景
+//在 iOS 8+ 和 Safari 8+ 中删除链接下划线位置处的空白
+a {
+  color: $text-color;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  &:focus,
+  &:active,
+  &:hover {
+    //当链接处于焦点、被激活和鼠标悬停其上时清除轮廓
+    outline-width: 0;
+    text-decoration: none;
+  }
+}
+// 对于没有内容的 a 标签，为它设置生成内容---href 的值
+/*a[href]:empty:::after{
+  content: attr(href);
+}*/
+
+/* ===文本=== */
+
+//在 Firefox 39 及之前的版本中移除 abbr 元素的下边框
+//在 Chrome, Edge, IE, Opera 和 Safari 中为 abbr 元素添加下划线
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+//在 Safari 6 中防止下列元素通过后面的规则重复的应用程序的字体为粗体
+b,
+strong {
+  font-weight: inherit;
+}
+
+//在 Chrome, Edge 和 Safari 浏览器中为下列元素添加正确的字体粗细
+b,
+strong {
+  font-weight: bolder;
+}
+
+//在 Android 4.3 及之前系统的设备中的浏览器为下列元素添加字体风格为斜体
+dfn {
+  font-style: italic;
+}
+
+//在 Chrome, Firefox 和 Safari 浏览器中纠正在含有 section 和 article 语境下的 h1 元素的字体尺寸和外边距
+article h1,
+section h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+//在 IE 9 及之前的浏览器版本中为 mark 元素添加背景颜色和字体颜色
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+//为 small 元素设置字体尺寸为离其最近的含有 font-size 属性的祖先元素的值的 80%
+small {
+  font-size: 80%;
+}
+
+//防止 sub 和 sup 元素影响行高
+%sub-sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  @extend %sub-sup;
+  bottom: -0.25em;
+}
+
+sup {
+  @extend %sub-sup;
+  top: -0.5em;
+}
+
+
+/* ===嵌入式内容=== */
+
+//在 IE 10 及更早的浏览器中当图片处于链接内部时移除图片的边框
+img {
+  border-style: none;
+}
+
+//在 IE 浏览器中当 svg 元素不是根元素时隐藏溢出
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
+/* ===分组内容=== */
+
+//纠正字体尺寸的继承和缩放(momospace字体是linux系统下的默认字体)
+//在所有浏览器中纠正奇数的以 em 作为单位的字体尺寸
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: $font-size;
+}
+
+//在 Firefox 浏览器下为 hr 元素添加正确的和模型尺寸计算方式
+//在 Edge 和 IE 中 hr 元素溢出时不隐藏
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+
+/* ===表单=== */
+
+//改变字体属性为继承
+//在 Firefox 和 Safari 中为下列元素移除外边距
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+//通过之前的规则修复 optgroup 元素的字体粗细
+optgroup {
+  font-weight: bold;
+}
+
+//溢出时不隐藏
+button,
+input {
+  overflow: visible;
+}
+
+//移除文本大小写的继承
+button,
+select {
+  text-transform: none;
+}
+
+//在 Android 4 系统版本中阻止破坏本地的音频视频控件的错误
+//在 iOS 和 Safari 中纠正不能点击的类型
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+//在 Firefox 中移除内部边框和内填充(firefox浏览器中button元素点击时会出现虚线边框)
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+//由先前的规则恢复焦点样式设置
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+//设置 fieldset 元素的 border, margin 和 padding 属性的值
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+//在 Edge 和 IE 中纠正文本包裹
+//纠正在 IE 中从 fieldset 元素继承而来的颜色值
+//在所有浏览器中当开发者清零了 fieldset 元素的属性时，移除 padding 属性的值，以便他们能找出其它错误
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+//在 IE 浏览器中移除默认的垂直导航条
+textarea {
+  overflow: auto;
+}
+
+//在 IE 10 及之前的浏览器中改变盒模型的默认规则，即将内填充和边框也算在宽高之内
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+//纠正在 Chrome 浏览器中递增和递减按钮的光标样式
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+//纠正 Chrome 和 Safari 浏览器奇怪的外观（看上去像文本框）
+//纠正在 Safari 浏览器中的轮廓样式（设置轮廓的偏移）
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+//在 OS X 的 Chrome 和 Safari 浏览器中删除内填充和移除按钮
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+//纠正在 Chrome, Edge 和 Safari 中文本占位符属性的样式
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+//纠正在 iOS 和 Safair 中可点击类型不能点击的样式
+//更改字体属性，在 Safari 中以继承的方式。
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+
+/* ===表格=== */
+
+//设置表格的边框合并为单一的边框，
+//border-collapse 属性会忽略 border-spacing(相邻单元格边框间的距离) 属性和 empty-cells(是否在空单元格周围绘制边框)
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+
+/* ===列表=== */
+
+//设置列表的标记类型为无
+ol,
+ul {
+  list-style-type: none;
+}
+
+/* ===关于浮动=== */
+.clearfix {
+  &::after{
+    content: "";
+    display: table;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*快捷样式*/
+figure {
+  overflow: hidden;
+  & a {
+    display: block;
+  }
+  & img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@mixin transition($duration: 0.6s) {
+  transition: all $duration linear 0s;
+}
+
+@mixin scale($xtimes: 1.1, $ytimes: 1.1) {
+  transform: scale($xtimes, $ytimes);
+}
+
+label {
+  margin-bottom: 0;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($line-number: 2) {
+  /*多行文本省略*/
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-number;
+}
+@mixin center-content($width: 87.5%) {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1200px) {
+    width: 1080px;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 970px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    //width: 750px;
+    width: 730px;
+  }
+  @media (max-width: 767px) {
+    width: $width;
+  }
+}
+
+%responsive-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%middle-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*validate错误提示*/
+
+label.error {
+  color: #f00;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#errorTips {
+  display: block;
+  color: #f00;
+  visibility: hidden;
+}
+
+/*===矢量字体图标===*/
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot?t=1517194002029'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1517194002029#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAABCEAAsAAAAAFzAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZXCEj8Y21hcAAAAYAAAADVAAAClNDwC1BnbHlmAAACWAAAC6UAAA9I/IC3wmhlYWQAAA4AAAAAMQAAADYQYpwZaGhlYQAADjQAAAAgAAAAJAf5A01obXR4AAAOVAAAAB4AAABAP+r/1WxvY2EAAA50AAAAIgAAACIfUhsabWF4cAAADpgAAAAfAAAAIAElAPtuYW1lAAAOuAAAAUUAAAJtPlT+fXBvc3QAABAAAAAAgQAAAKzz+9HieJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk/s84gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVDz7ztzwv4EhhnkKwyygMCNIDgA5vA2YeJzFkj0OgkAQhd8K/oA/eABj7GgIB6GkspZL2HkTz0JhZeUp3gmIlPiWoZFEO+NsPpKd2Qwv8wbAFEAgMhEC7gEHH3dlXZ8PEPf5EFfdd9gqs8KZB6bMmLNgySMrXlizYdt1ejWunobqs69+Cqfu47Mfjq9OpGGNJRIpmGImFTE2mGOBSOXZl84/Dve/X7/Hqv/ehlsizgOSyIOhOYKp4T1nZmi2YG5oymBh+D4sDb8rPBp+d3gy5AZYGV4FL4bfHdaGvAIbQ66BT0P+ga2B6AWnJFLWAAAAeJytV32QHFURn35vvr9n3szOzH7e7tzu3nGb3dzu7W7OS25NAlLhYkiISs4PiEFRK3zEqBCpxAQoCoWYRIpSpMBCyxILsNQSvxDF8gPFAhUlpVWKRghojCKKxsS6m9izdyj/+J+zO++97nmvp7tfv+7fcALHnf0dfZiGHOPGuEnuXG4zx4E4ARWTFKBcn2qSCfDLgh94Jq3H9bIUV5p0DQQV0cu0e1O1QJREC0woQqfc7tWbpA7dqVkyA+1MASDKZbe61bxLj4Aa1os3JReQT4FfivPW7IpkQ2PgtUeYfK3uupHrHpRFQZAJ4S0TrgwyiqCoYvJpwcr6D5fGSQn0qJ7dOG+M5Ny3fnDqqkI1UAAOHACWGzHvHThZB/97sxnmRpJtyGHWiEc9uPa4FjK9UHuWwwvQ1pvpGXodtxoJy21Z/YANNIv4JYGeYU7I/LBcDMpNc65a6paKplIbKY5NlEt+ZOe8IIiOffeevFuxJ0q1eORV/mrQeUoFWRXglCjruunlckGlY823zrmg1Y6Mxmh5bKwQWZ7CdF1TDz4PjUauFfRGxyuFpln1dvcn84UgX5JT3SjqdoS+RN/L9bn13C7UL3VuPe72e02IKxbUa3FFMqEEfmyCl5n5b1/Eqf1uZ3k+Wx6kD4N0KS4KMr4JUhPqs9BvB5lOu9+rpfJM4hVJe5Z0p8gDpuuatx1RwNMt9fo9qqUrGpFvuSFl37DUgptncNtw3jM/UQ1D/Ylimi9SS+WprhNTOP2Nh04LwumHdlwsikwWZO2yq9/24KG5uUMPPoYdXOaENpgHldBS9+5VRTlUDhlgh06QNlfptq1flc4IILZDC8AK7VtUHaind/vfOM3zQ+njxNEyQvOCw0ORKPnts+i7NIYP0pN0P8dzNpfnytxGZEpdMdN3pnrtjO94YqW2PGYmVGpBpleX2DiwKp3FQA0cdE/sl9FDTlypTfU61e5Ur98pQuCXi+CJMPMO0nhjVI2iangCO4CwGt24ugFwJLk4+TaQeQz1agjQrjYWH8mP0lVeNuvBFXlv0s8BXIdUllw+W58n4yybZYu/SB+/Ynwubs3l5OSiB+TGIfPGehdAmiiSl9K3NRiKDlkDwlqI9vJnj549yJ9Hb+dkrsStwjPLAU+CDN93OSEj1tEYMRMUQcJxjfRx0ztBxsU4aJFaL0CyV8PRVL+XYRlPEiv1dNyGB5J//XTfnUS67zPJg8mPidXYsBLExua2S2mm/ZdN36nvLBj3Hdt9Z/umMYUnRvXCFpDJzQ08AzSsK0r4pE+p/xS98lXJ+pN/dp+DKiw+szUH/No3H34ToSNzG4LMm+GxzxZbIL822fbllecDv3UuB3Ru9/7XUcEI7jIoJI/bd3iq6tzp0KXzej2/Gvd1kuOYM7QJozu1qcczP25BTZSK0J/qBZ00wDEPZXqpD8RaH4/AKl7NTdyx3aTS/bs2fgi+tWp+Xu2+YOr/7FQumKNZVxIFsj18PLk0eaZsCujBzydnju5sbbsU+NeCfPtvNiVnQ4EdGL31YOmAL/FhYX3WVFR+ewmm4X0vjo/etuEyghHHnb0Vc8o1nMPFXIubQbULEHc73eXbj/2OUID/0F2k/RhETspwQY/r1zi6dDAx2EyghVP34oXN4hMvjyA6mjwvipA9ehRygpA8d/T+44Jw/P4HjvP8cZg/9+PnX/SbufOfnuP/MyKRiLOeSp7DVbmncNXC3uF8XPXA/cc5gjrfQv9B34en5QXUF8PDsSDGfws1b0FQAIukpD/ItqDb0h2LxlIsdQfQGRCnxHzMnU534Dgl0sGEhGUhrnfrjqX5kl9i3VQM0t2lp53hMoCfBy2fEErEGZEIhBzFMc/L84w5kWI7lmPpVs6oqIqsyKImEp7iBFFWVMuIme+HUbS0YB/PC9MmL1zkMxY76bpcpKm+EvGE53lDljUtalSmz/EDP2pm5zZmVzbPOWe6guIjTcPCQAXdkB1NNTBBr2fpNSCETfOCsFfmFRKhlqxsMV7TCZVkkfK64/vZqFB0zApzHDYvEwG1k/Q9vFDihT26RN9DSPIE5QlePJUfPYxxhcSfeCKJvJjao6mBMWZZtuU4ZYc5rFawrEIRa2PU8FGmpSf38qlP+I8ouFKEV0eyJgeaYeI0fGnN3er7wXmdaDJAq9CYBlqsyAYvirzh+GguWoEGNybb2ZWNwVimiu+oWI22hmJElnwbZRL+ozxReBG26laF+c2gZuWmUTzrj9qKXCnlC9nAd2RF5yXC/4kQURAPo6cJf/hWNJgfxszl9Lf0Zk5PTyPMQtDOlEACrCQgeWILmpDCgBICgQFgmulkEBjwdbFGaz1MQQH8GvZcDWsaX7wk+RtsuBBuutrXHgdPfYKI2g+BaU9ixj8qNq7hkxPH3FO2uPGT4lffSS8WJooj1YcuAZdOCsntVxDL/gExjZ+BL/+QOuaTxCTq81e5t20RHgNTO3ultml6qZYepqfou7ESvIbbwXFV0SIBpok+YGmsSKimBWJmgEYsc6plTB/OEoTBOlGriD5WC6SGpSEuzwLmE6E3hRkHS3GKfAaAeTPAxCmlVB92EircPR7zQFTVz2mL/1QMEtOI3a2F8pClJu3kHj8PkPdpD3uvwFR54UeyCqDKxDY9z4QjprnLGrPXpRLWiZZwtSCsVb2cdoQArYzfjZFBVC3nq4unlEC7m0U0Joa8xDqCchd+5BcKPspizFx8UVZVmfZkDViBwX4Uu8s016VT1wnCLhS+Nh0Pa+fH6N8Rd2S5UUSAE0v4z5fEIBOglQHa1utO1dL9RSyhgFTHulGCjKfgnkr9AJ3pp+VzWDxn0YOpr+JlfwZI9Z0mwBy0eV0xeP7LQAkcz5hm04jdcibJkx0rN7VEV1ohL74Ab9mUfPpQtJ6YJoPQXRTctO65cNJyXSuxGzOEzDSo0FgNwGAzkIddQwHSAQp/DyostlqmFSQ67G5fNCmCtFJiyX5410XJHWu3vwbVZ1bSZFi6I0bOYM8KHqxpLiysWEPImhXwS4u9jMM+xXP0EvREi+tg7HT6MS33ywxv7JHql9OflI7TPpYm8e7gr0yluI+Jsk9+/Dn2q+lkvwJzXfBZ8s3p5Fn1xIoTKlyYS+mvZ5NnlWdzcIAlF4a/rzsnWic1VPC5zypfU9p4f29HcmwFlN6S/LZ3snvokg+vOPjWI49uOznzPHyugdeyntj8i/yVG3AbuH24Z0v4MK38ky+DvWaKGpEYlpaUhfh8mTWJPLYc8Aw3qUalpU1sQQoYujixO8RLHlZVhJgpbMDoT9FSyqFlijNwQhGGj+mxaFRWslWBVwz6hsHs64TQ18byslbvocMz4utXD15Ps5JQzcpqdRJgtLCNDx1yuRPSbcVRgC9oNHQWf+1EVLt+yxXEsFmpVbJNjezcgiQIJuTGcpFnn7d46Xk2i3LjWTBFspM8EoE4mvVq1mArgc2z9tR0XSTQHctOGKs3AWwdjIyjUgQmq6UVciJjKrfhjNQsjS6eXut4AJ697m/4DlMQ805QKgV2FlHElp2EXLHZEM2xHL4VIHkPfBhSBXLjpqhv2Zm6nh/6f4F8n7Pwyyng2hgp6L3uK9JGtexglPhlPDe1NbCEJwuQQtF6CgJSXEl/vrDDCQKHfgJhMAQLl9IbF/bp9K6Ft9HzX3LD0H3JjazAgqf/oFvWDAQO6btB4C4+5gRdUriul3wpdK9dOiTrNcvSVm0HnJ6qpmEcH6I/o/uwxo9gLPe4tYiKL8ZseCW3h3s/4uPlA9tHgBsgQJYgTXpeJo0ItKIWS+UKpvFyut/lOB12cLNF4X9zO//l4tffkCum3NTQciy+zI3pNYt+Cm+nxsgf61PYLWZsz7fIH9N2R3KDgxd8AD8IEm2V7Tj2Kt0CG57+vz3Qd2M40LWjbcB+4Vujk0C/4hgLjxiOY9C1hnNfvgB24Cy1j76S+G4+b4f2sHkUCvn0GwU7pLh/A5JRtQoAAAB4nGNgZGBgAOJYc7EJ8fw2Xxm4WRhA4NqUNYIw+v/V/2ksrsxTgFwOBiaQKAAmAQtcAAAAeJxjYGRgYG7438AQw8L4/+r/3SyuDEARFCAAAJyaBk14nGNhYGBgfsnAwMKAjP9fReUDMSO6GggGAIpBAv4AAAAAAAAAdgDEAWIB2gJOAqAC+gQUBGoFAAWIBdwGnAbsB6QAAHicY2BkYGAQYHjPwM0AAkxAzAWEDAz/wXwGACJOAiEAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicbchRDsIgEEVRXmmxRat1IV0UzIyRWKShmOruJfHXm5yfqxr1y6r/TWig0aKDwQE9BlgcccKIMy6YcFV495ssQkW430O5c3a74XqKaJ+oq1JsA3nSriLy5rWyK2KyUMqsJW5jlOglzyzrkj6Dd/SYyWW23m2B5vC8JaW+0qIkigAAAA==') format('woff'),
+  url('../fonts/iconfont.ttf?t=1517194002029') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1517194002029#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-selected:before { content: "\e620"; }
+
+.icon-withdraw:before { content: "\e652"; }
+
+.icon-delete:before { content: "\e627"; }
+
+.icon-boc:before { content: "\e658"; }
+
+.icon-bocom:before { content: "\e662"; }
+
+.icon-icbc:before { content: "\e6f4"; }
+
+.icon-abc:before { content: "\e6f6"; }
+
+.icon-ccb:before { content: "\e6f7"; }
+
+.icon-update:before { content: "\e67f"; }
+
+.icon-record:before { content: "\e62e"; }
+
+.icon-ems:before { content: "\e663"; }
+
+.icon-member-deploy:before { content: "\e62c"; }
+
+.icon-back-card:before { content: "\e6c0"; }
+
+.icon-basic-info:before { content: "\e64a"; }
+
+/*===重置一些样式===*/
+//datetimepicker的样式重置
+.datetimepicker {
+  td,
+  th {
+    width: 50px;
+  }
+}

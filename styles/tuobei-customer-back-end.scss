@@ -1,0 +1,1669 @@
+@charset "UTF-8";
+/*! lixinjie 20180129 https://github.com/xinjie-just/tuobei-customer-back-end.git */
+@import "variables";
+@import "reboot";
+
+/*===首页===*/
+#header {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  top: 0;
+  .logo {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: $sidebar-menu-width;
+    height: $header-height;
+    line-height: $header-height;
+    background-color: $logo-bg-color;
+    color: #fff;
+    font-size: $font-size;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: .2em;
+    a {
+      display: block;
+      height: 100%;
+      color: inherit;
+      &:hover {
+        background-color: darken($logo-bg-color, 8%);
+      }
+    }
+  }
+  .navbar {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - #{$sidebar-menu-width});
+    height: $header-height;
+    background-color: $main-color;
+    @extend .clearfix;
+  }
+  .custom-menu {
+    float: right;
+    height: $header-height;
+    line-height: $header-height;
+    color: #fff;
+    li {
+      float: left;
+      position: relative;
+      padding-left: 20px;
+      padding-right: 20px;
+      &:not(:first-of-type) {
+        &::before {
+          position: absolute;
+          content: "";
+          width: 1px;
+          height: 40px;
+          left: 0;
+          top: 50%;
+          background-color: #fff;
+          transform: translateY(-50%);
+        }
+      }
+      &.sign-out {
+        padding-left: 0;
+        padding-right: 0;
+        a {
+          display: block;
+          padding-right: 20px;
+          padding-left: 20px;
+          color: #fff;
+          &:hover {
+            background-color: darken($main-color, 8%);
+          }
+        }
+      }
+      &.user-menu {
+        font-size: 0;
+        span {
+          font-size: $font-size;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        img {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 50%;
+          font-size: $font-size;
+          border: 1px solid darken($main-color, 8%);
+          @extend %ellipsis;
+        }
+      }
+    }
+  }
+}
+#sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-menu-width;
+  height: 100%;
+  background-color: $menu-bg-color;
+  color: #5f79b0;
+  padding-top: $header-height;
+  overflow-y: auto;
+  .sidebar-menu-list {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    > li {
+      $height: 30px;
+      &:not(:last-of-type) {
+        margin-bottom: 14px;
+      }
+      > a {
+        display: block;
+        height: $height;
+        line-height: $height;
+        color: #5f79b0;
+        font-size: $font-size;
+        padding-left: 40px;
+        border-left: 3px solid transparent;
+        .icon {
+          font-size: $font-size + 2;
+          margin-right: 6px;
+        }
+        &.active,
+        &:hover {
+          border-left-color: #fff;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+#main {
+  display: block;
+  height: 100%;
+  margin-left: $sidebar-menu-width;
+  padding: calc(30px + #{$header-height}) 30px calc(30px + #{$footer-height});
+  background-color: $main-content-bg-color;
+}
+#footer {
+  z-index: 999;
+  display: block;
+  width: calc(100% - #{$sidebar-menu-width});
+  height: $footer-height;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  line-height: 40px;
+  font-size: $font-size;
+  color: $text-info-color;
+  padding-right: 30px;
+  padding-left: 30px;
+  @extend %ellipsis;
+}
+
+/*===基本信息===*/
+.basic-info-form {
+  $height: 32px;
+  $div-space-between: 60px;
+  width: 100%;
+  background-color: #fff;
+  padding: 15px 60px 100px 60px;
+  @extend .clearfix;
+  > div {
+    float: left;
+    width: calc(50% - #{$div-space-between} / 2);
+    min-width: 240px;
+    margin-bottom: 18px;
+    &:nth-of-type(2n + 1) {
+      margin-right: $div-space-between;
+    }
+    label:not(.error) {
+      display: block;
+      font-size: $font-size;
+      font-weight: 500;
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      position: relative;
+      color: $text-info-color;
+      &.required {
+        &::before {
+          content: "*";
+          position: absolute;
+          left: -8px;
+          font-size: $font-size;
+          color: #f00;
+        }
+      }
+    }
+    label.error {
+      width: 100%;
+      display: block;
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+    }
+    input {
+      width: 100%;
+      display: block;
+      height: $height + 2;
+      line-height: $height;
+      border: 1px solid #bfbfbf;
+      font-size: $font-size;
+      color: $text-info-color;
+      padding-right: 20px;
+      padding-left: 20px;
+      border-radius: 2px;
+      @extend %ellipsis;
+      &:focus {
+        border-color: darken(#bfbfbf, 80%);
+        outline: none;
+      }
+    }
+    &.datetime {
+      position: relative;
+      input {
+        background-color: #ccc;
+        cursor: pointer;
+      }
+    }
+    select {
+      width: 100%;
+      height: $height + 2;
+      line-height: $height;
+      padding-left: 20px;
+      border: 1px solid #bfbfbf;
+      color: #a7a7a7;
+      font-size: $font-size;
+      cursor: pointer;
+      &:focus {
+        border-color: darken(#bfbfbf, 80%);
+        outline: none;
+      }
+      option {
+        height: 30px;
+        line-height: 30px;
+        padding-right: 20px;
+        padding-left: 20px;
+        color: $text-info-color;
+        font-size: $font-size;
+        cursor: pointer;
+      }
+    }
+    &.cancel-confirm {
+      margin-top: 50px;
+      font-size: 0;
+      button {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $font-size;
+        color: #fff;
+        padding: 10px 32px;
+        text-align: center;
+        border-radius: 40px;
+        &:not(:last-of-type) {
+          margin-right: 40px;
+        }
+      }
+      .cancel {
+        background-color: #eaeff9;
+        &:hover {
+          background-color: darken(#eaeff9, 8%);
+        }
+        &:focus {
+          background-color: darken(#eaeff9, 14%);
+        }
+      }
+      .confirm {
+        background-color: $btn-bg-color;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+  }
+}
+
+/*===消费记录===*/
+.handle-list {
+  $height: 30px;
+  $mt: 5px;
+  padding: 17px 10px;
+  background-color: #fff;
+  @extend .clearfix;
+  .condition-list {
+    float: left;
+    @extend .clearfix;
+    > div {
+      float: left;
+      margin-top: $mt;
+      margin-bottom: $mt;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+        font-size: 0;
+      }
+      label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        font-size: $font-size;
+        color: $text-color;
+      }
+      input {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        color: $text-info-color;
+        border: 1px solid #bfbfbf;
+        width: 160px;
+        height: $height;
+        line-height: $height - 2;
+        padding-right: 1em;
+        padding-left: 1em;
+        @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+      }
+      select {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        color: $text-info-color;
+        border: 1px solid #bfbfbf;
+        width: 160px;
+        height: $height;
+        line-height: $height - 2;
+        padding-right: 1em;
+        padding-left: 1em;
+        @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+        option {
+          line-height: 1.5;
+        }
+      }
+    }
+    @media (max-width: 1600px) {
+      width: calc(100% - 140px);
+    }
+  }
+  .handle-method {
+    float: right;
+    margin-top: $mt;
+    margin-bottom: $mt;
+    button {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 16px;
+      padding-left: 16px;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+      &.filter {
+        background-color: $main-color;
+        &:hover {
+          background-color: darken($main-color, 8%);
+        }
+        &:focus {
+          background-color: darken($main-color, 14%);
+        }
+      }
+      &.export {
+        background-color: $btn-bg-color;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+  }
+}
+.record-list {
+  background-color: #fff;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  table.record-list-table {
+    $height: 40px;
+    width: 100%;
+    table-layout: fixed;
+    thead {
+      tr {
+        height: $height;
+        line-height: $height;
+        background-color: $main-color;
+        th {
+          padding-right: 1em;
+          padding-left: 1em;
+          font-size: $font-size;
+          color: #fff;
+          @extend %ellipsis;
+        }
+      }
+    }
+    tbody {
+      tr {
+        height: $height;
+        line-height: $height - 1;
+        border-bottom: 1px solid #f5f5f5;
+        td {
+          padding-right: 1em;
+          padding-left: 1em;
+          font-size: 12px;
+          color: $text-info-color;
+          @extend %ellipsis;
+          &.order-status {
+            padding-left: calc(1em + 18px);
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 1em;
+              top: 50%;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              transform: translateY(-50%);
+            }
+          }
+          &.paid {
+            &::before {
+              background-color: #00ff42;
+            }
+          }
+          &.not-paid {
+            &::before {
+              background-color: #f00;
+            }
+          }
+          &.abolish {
+            &::before {
+              background-color: #7d7d7d;
+            }
+          }
+          &.unknown {
+            &::before {
+              background-color: #fefe00;
+            }
+          }
+        }
+      }
+    }
+    .order-number {
+      width: 30%;
+    }
+    .product-name {
+      width: 40%;
+    }
+    .user-phone {
+      width: 120px;
+      min-width: 15%;
+    }
+    .member-level {
+      width: 100px;
+      min-width: 10%;
+    }
+    .product-price {
+      width: 120px;
+      min-width: 15%;
+    }
+    .payment-method {
+      width: 100px;
+      min-width: 10%;
+    }
+    .order-time {
+      width: 150px;
+      min-width: 20%;
+    }
+    .order-status {
+      width: 100px;
+      min-width: 10%;
+    }
+  }
+}
+
+/*分页*/
+.pagination-wrapper {
+  text-align: right;
+  margin-top: 15px;
+  padding-right: 1em;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  border-radius: 4px;
+  > li {
+    display: inline;
+    > a,
+    > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      line-height: 1.42857143;
+      text-decoration: none;
+      color: $text-color;
+      border: 1px solid #d4d4d4;
+      background-color: #fff;
+      &:hover,
+      &:focus {
+        z-index: 2;
+        color: #fff;
+        border-color: $main-color;
+        background-color: $main-color;
+      }
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+  }
+  > .active {
+    > a,
+    > span {
+      background-color: $main-color;
+      border-color: $main-color;
+      color: #fff;
+      &:hover,
+      &:focus {
+        z-index: 3;
+        cursor: default;
+        color: #fff;
+        border-color: $main-color;
+        background-color: $main-color;
+      }
+    }
+  }
+  > .disabled {
+    > a,
+    > span {
+      &:hover,
+      &:focus {
+        color: #777;
+        cursor: not-allowed;
+        background-color: #fff;
+        border-color: #ddd;
+      }
+    }
+  }
+}
+
+/*======*/
+.content-wrapper {
+  $width: 200px;
+  $height: 40px;
+
+  /*余额提现*/
+  .withdraw-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    a {
+      display: block;
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      color: $text-info-color;
+      font-size: $font-size;
+      &.active,
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+  }
+  .withdraw-content {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 15px 15px 120px;
+    .my-count {
+      font-size: 14px;
+      color: $text-info-color;
+      margin: 60px auto 0;
+      text-align: center;
+      line-height: 1.8em;
+    }
+    .value {
+      margin: 30px auto 0;
+      font-size: 30px;
+      color: $text-info-color;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      span {
+        font-size: 50px;
+        margin-left: 4px;
+      }
+    }
+    .withdraw {
+      text-align: center;
+      margin: 70px auto 0;
+      a {
+        display: inline-block;
+        padding: 10px 38px;
+        border-radius: 40px;
+        font-size: $font-size;
+        color: #fff;
+        background-color: $btn-bg-color;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+  }
+  .withdraw-form {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 24px 80px 80px;
+    > div {
+      color: $text-info-color;
+      font-size: 12px;
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        height: 36px;
+        line-height: 36px;
+        font-size: $font-size;
+        color: $text-info-color;
+      }
+      &.card-select {
+        select {
+          min-width: 240px;
+          height: 36px;
+          line-height: 36px;
+          padding-left: 20px;
+          border: 1px solid #bfbfbf;
+          color: #a7a7a7;
+          font-size: $font-size;
+          cursor: pointer;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+          option {
+            height: 30px;
+            line-height: 30px;
+            padding-right: 20px;
+            padding-left: 20px;
+            color: $text-info-color;
+            font-size: $font-size;
+            cursor: pointer;
+          }
+        }
+      }
+      .money-wrapper {
+        $withdraw-money-height: 60px;
+        min-width: 340px;
+        width: 42%;
+        height: $withdraw-money-height;
+        line-height: $withdraw-money-height - 2;
+        border: 1px solid #bfbfbf;
+        @extend .clearfix;
+        .currency {
+          float: left;
+          display: block;
+          width: $withdraw-money-height - 2;
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          color: $text-info-color;
+        }
+        .my-money {
+          float: left;
+          display: block;
+          width: calc(100% - #{$withdraw-money-height} - 96px);
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
+          font-size: $font-size + 2;
+          font-weight: 500;
+          color: $text-info-color;
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
+        .all-money {
+          display: block;
+          float: right;
+          width: 96px;
+          height: $withdraw-money-height - 2;
+          line-height: $withdraw-money-height - 2;
+          text-align: center;
+          background-color: transparent;
+          color: $btn-bg-color;
+          font-size: 14px;
+          cursor: pointer;
+          &:hover {
+            background-color: #efefef;
+          }
+          &:focus {
+            background-color: #eaeaea;
+          }
+        }
+      }
+      &.tips {
+        line-height: 1.6;
+        span {
+          color: #ff1616;
+        }
+      }
+      &.handle {
+        margin-top: 40px;
+        @extend .clearfix;
+        button {
+          float: left;
+          display: block;
+          padding: 10px 38px;
+          border-radius: 40px;
+          font-size: $font-size;
+          color: #fff;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*银行卡管理*/
+  .card-management-content {
+    $item-height: 90px;
+    $item-width: 250px;
+    position: relative;
+    padding-bottom: 200px;
+    .card-list {
+      @extend .clearfix;
+      li {
+        z-index: 9;
+        position: relative;
+        float: left;
+        width: 250px;
+        height: 90px;
+        border-radius: 6px;
+        margin: 15px 10px;
+        padding-top: 10px;
+        padding-left: 80px;
+        color: #fff;
+        cursor: pointer;
+        &.selected,
+        &.active {
+          &::before {
+            z-index: 10;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, .5) url("../imgs/selected.png") no-repeat center / 30px;
+          }
+        }
+        &:nth-of-type(3n + 1) {
+          background-color: #d81e06;
+          &:hover {
+            background-color: darken(#d81e06, 8%);
+          }
+          &:focus {
+            background-color: darken(#d81e06, 14%);
+          }
+        }
+        &:nth-of-type(3n + 2) {
+          background-color: #13227a;
+          &:hover {
+            background-color: darken(#13227a, 8%);
+          }
+          &:focus {
+            background-color: darken(#13227a, 14%);
+          }
+        }
+        &:nth-of-type(3n + 3) {
+          background-color: #009174;
+          &:hover {
+            background-color: darken(#009174, 8%);
+          }
+          &:focus {
+            background-color: darken(#009174, 14%);
+          }
+        }
+        .bank-name {
+          font-size: $font-size;
+          line-height: 26px;
+        }
+        .card-type {
+          font-size: 12px;
+          line-height: 22px;
+        }
+        .card-number {
+          font-size: 14px;
+          line-height: 24px;
+        }
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          font-size: 40px;
+          transform: translateY(-50%);
+          color: #fff;
+        }
+      }
+      .add-card-btn {
+        position: relative;
+        display: block;
+        float: left;
+        height: $item-height;
+        width: $item-width;
+        border: 2px dashed #a7a7a7;
+        padding-top: 50px;
+        text-align: center;
+        border-radius: 6px;
+        margin: 15px 10px;
+        background-color: transparent;
+        &:hover {
+          background-color: darken(#fff, 8%);
+        }
+        &:focus {
+          background-color: darken(#fff, 14%);
+        }
+        .icon {
+          position: absolute;
+          top: 14px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 34px;
+          font-weight: 500;
+          color: #eaeff9;
+        }
+      }
+    }
+    .remove-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 15px;
+      display: block;
+      padding: 10px 38px;
+      border-radius: 40px;
+      font-size: $font-size;
+      color: #fff;
+      &.default {
+        background-color: #bebebe;
+        cursor: not-allowed;
+      }
+      &.active {
+        background-color: $btn-bg-color;
+        cursor: pointer;
+        &:hover {
+          background-color: darken($btn-bg-color, 8%);
+        }
+        &:focus {
+          background-color: darken($btn-bg-color, 14%);
+        }
+      }
+    }
+    .remove-card-wrapper {
+      z-index: 10000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      box-shadow: 0 0 5px #eee;
+      padding: 30px 50px 50px;
+      border-radius: 4px;
+      &.default {
+        display: none;
+      }
+      &.active {
+        display: block;
+      }
+      .tips {
+        line-height: 1.6em;
+        text-align: center;
+        font-size: 14px;
+        color: $text-info-color;
+      }
+      .remove-card-handle {
+        margin-top: 40px;
+        button {
+          padding: 10px 32px;
+          color: #fff;
+          font-size: 14px;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel-remove {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm-remove {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
+      }
+    }
+    .add-card-wrapper {
+      $add-card-form-width: 90px;
+      $add-card-form-height: 34px;
+      z-index: 10000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      box-shadow: 0 0 5px #eee;
+      padding: 30px;
+      border-radius: 4px;
+      &.default {
+        display: none;
+      }
+      &.active {
+        display: block;
+      }
+      > div {
+        font-size: 0;
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+        label:not(.error) {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          width: $add-card-form-width;
+          height: $add-card-form-height;
+          line-height: $add-card-form-height;
+          position: relative;
+          padding-right: 18px;
+          text-align: right;
+          color: $text-color;
+          &.required {
+            &::after {
+              content: "*";
+              position: absolute;
+              right: 8px;
+              font-size: $font-size;
+              color: #f00;
+            }
+          }
+        }
+        label.error {
+          display: block;
+          font-size: 12px;
+          height: 24px;
+          line-height: 24px;
+          margin-left: $add-card-form-width;
+        }
+        input {
+          display: inline-block;
+          vertical-align: middle;
+          width: calc(100% - #{$add-card-form-width});
+          height: $add-card-form-height;
+          line-height: $add-card-form-height - 2;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding-right: 20px;
+          padding-left: 20px;
+          border-radius: 2px;
+          @extend %ellipsis;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+        }
+        &.add-card-handle {
+          margin-left: $width;
+          margin-top: 40px;
+          font-size: 0;
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: $font-size;
+            color: #fff;
+            padding: 10px 32px;
+            text-align: center;
+            border-radius: 40px;
+            &:not(:last-of-type) {
+              margin-right: 40px;
+            }
+          }
+          .cancel {
+            background-color: #eaeff9;
+          }
+          .confirm {
+            background-color: $btn-bg-color;
+          }
+        }
+      }
+      .remove-card-handle {
+        margin-top: 40px;
+        button {
+          padding: 10px 32px;
+          color: #fff;
+          font-size: 14px;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          &.cancel-remove {
+            background-color: #eaeff9;
+            &:hover {
+              background-color: darken(#eaeff9, 8%);
+            }
+            &:focus {
+              background-color: darken(#eaeff9, 14%);
+            }
+          }
+          &.confirm-remove {
+            background-color: $btn-bg-color;
+            &:hover {
+              background-color: darken($btn-bg-color, 8%);
+            }
+            &:focus {
+              background-color: darken($btn-bg-color, 14%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*分店管理*/
+  .subbranch-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    ul {
+      li {
+        border-bottom: #eaeff9;
+        a {
+          display: block;
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          color: $text-info-color;
+          font-size: $font-size;
+          &.active,
+          &:hover {
+            background-color: $main-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .subbranch-add {
+      display: block;
+      margin: 230px auto 20px;
+      width: calc(#{$width} - 40px);
+      height: 30px;
+      font-size: $font-size;
+      color: #fff;
+      background-color: $btn-bg-color;
+    }
+  }
+  .subbranch-info {
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 30px 20px 90px 40px;
+    @extend .clearfix;
+    .form-left {
+      $subbranch-form-label-width: 114px;
+      $subbranch-form-label-height: 34px;
+      width: 66%;
+      min-width: 622px;
+      float: left;
+      > div {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 0;
+        label:not(.error) {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          width: $subbranch-form-label-width;
+          height: $subbranch-form-label-height;
+          line-height: $subbranch-form-label-height;
+          position: relative;
+          padding-right: 18px;
+          text-align: right;
+          color: $text-color;
+          &.required {
+            &::after {
+              content: "*";
+              position: absolute;
+              right: 8px;
+              font-size: $font-size;
+              color: #f00;
+            }
+          }
+        }
+        label.error {
+          display: block;
+          font-size: 12px;
+          height: 24px;
+          line-height: 24px;
+          margin-left: $subbranch-form-label-width;
+
+        }
+        input {
+          display: inline-block;
+          vertical-align: middle;
+          max-width: calc(100% - #{$subbranch-form-label-width});
+          width: 44%;
+          height: $subbranch-form-label-height;
+          line-height: $subbranch-form-label-height - 2;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding-right: 20px;
+          padding-left: 20px;
+          border-radius: 2px;
+          @extend %ellipsis;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+        }
+        &.qr-code,
+        &.withdraw-entitle {
+          select {
+            display: inline-block;
+            vertical-align: middle;
+            width: 44%;
+            max-width: calc(100% - #{$subbranch-form-label-width});
+            height: $subbranch-form-label-height;
+            line-height: $subbranch-form-label-height - 2;
+            padding-left: 20px;
+            border: 1px solid #bfbfbf;
+            color: #a7a7a7;
+            font-size: $font-size;
+            cursor: pointer;
+            &:focus {
+              border-color: darken(#bfbfbf, 80%);
+              outline: none;
+            }
+            option {
+              height: 30px;
+              line-height: 30px;
+              padding-right: 20px;
+              padding-left: 20px;
+              color: $text-info-color;
+              font-size: $font-size;
+              cursor: pointer;
+            }
+          }
+        }
+        &.subbranch-intro {
+          textarea {
+            display: inline-block;
+            vertical-align: middle;
+            min-width: calc(100% - #{$subbranch-form-label-width});
+            width: calc(100% - #{$subbranch-form-label-width});
+            max-width: calc(100% - #{$subbranch-form-label-width});
+            min-height: 100px;
+            height: 150px;
+            max-height: 150px;
+            line-height: $subbranch-form-label-height - 12;
+            border: 1px solid #bfbfbf;
+            font-size: $font-size;
+            color: #a7a7a7;
+            padding: 6px 20px;
+            border-radius: 2px;
+            resize: vertical;
+            &:focus {
+              border-color: darken(#bfbfbf, 80%);
+              outline: none;
+            }
+          }
+        }
+        &.cancel-confirm {
+          margin-left: $subbranch-form-label-width;
+          margin-top: 50px;
+          font-size: 0;
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: $font-size;
+            color: #fff;
+            min-width: 100px;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 32px;
+            padding-left: 32px;
+            text-align: center;
+            border-radius: 40px;
+            &:not(:last-of-type) {
+              margin-right: 40px;
+            }
+          }
+          .cancel {
+            background-color: #eaeff9;
+          }
+          .confirm {
+            background-color: $btn-bg-color;
+          }
+        }
+        .subbranch-picture-file-upload {
+          z-index: 99;
+          display: inline-block;
+          vertical-align: middle;
+          width: calc(100% - #{$subbranch-form-label-width});
+          position: relative;
+          height: 210px;
+          .tips {
+            position: absolute;
+            bottom: 0;
+            left: 180px;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #a7a7a7;
+          }
+          .placeholder-img-list {
+            z-index: 99;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend .clearfix;
+            li {
+              float: left;
+              width: 100px;
+              height: 100px;
+              background-color: #eaeff9;
+              padding: 26px 10px 0;
+              overflow: hidden;
+              text-align: center;
+              border-radius: 2px;
+              margin: 9px;
+              .icon {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 32px;
+                color: #fff;
+              }
+              span {
+                font-size: 12px;
+                color: #fff;
+                @extend %ellipsis;
+              }
+            }
+          }
+        }
+        .logo-file-upload {
+          z-index: 99;
+          width: 120px;
+          position: relative;
+          height: 210px;
+          .tips {
+            position: absolute;
+            bottom: 0;
+            left: 180px;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #a7a7a7;
+          }
+          .placeholder-img-list {
+            z-index: 99;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend .clearfix;
+            li {
+              float: left;
+              width: 100px;
+              height: 100px;
+              background-color: #eaeff9;
+              padding: 26px 10px 0;
+              overflow: hidden;
+              text-align: center;
+              border-radius: 2px;
+              margin: 9px;
+              span {
+                font-size: 16px;
+                color: #fff;
+                @extend %ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo-img {
+      float: right;
+      width: 120px;
+    }
+  }
+
+  /*商家卡管理*/
+  .membership-card-nav {
+    width: $width;
+    float: left;
+    background-color: #fff;
+    a {
+      display: block;
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      color: $text-info-color;
+      font-size: $font-size;
+      &.active,
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+  }
+  .membership-card-form {
+    $membership-card-form-height: 32px;
+    $div-space-between: 60px;
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 30px 130px;
+    > div {
+      float: left;
+      width: calc(50% - #{$div-space-between} / 2);
+      min-width: 240px;
+      margin-bottom: 18px;
+      &:nth-of-type(2n + 1) {
+        margin-right: $div-space-between;
+      }
+      label:not(.error) {
+        display: block;
+        font-size: $font-size;
+        width: 100%;
+        height: $membership-card-form-height;
+        line-height: $membership-card-form-height;
+        position: relative;
+        color: $text-color;
+        &.required {
+          &::before {
+            content: "*";
+            position: absolute;
+            left: -8px;
+            font-size: $font-size;
+            color: #f00;
+          }
+        }
+      }
+      label.error {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        height: 18px;
+        line-height: 18px;
+      }
+      input {
+        width: 100%;
+        display: block;
+        height: $membership-card-form-height + 2;
+        line-height: $membership-card-form-height;
+        border: 1px solid #bfbfbf;
+        font-size: $font-size;
+        color: #a7a7a7;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 2px;
+        @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+      }
+      select {
+        width: 100%;
+        height: $membership-card-form-height + 2;
+        line-height: $membership-card-form-height;
+        padding-left: 20px;
+        border: 1px solid #bfbfbf;
+        color: #a7a7a7;
+        font-size: $font-size;
+        cursor: pointer;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+        option {
+          height: 30px;
+          line-height: 30px;
+          padding-right: 20px;
+          padding-left: 20px;
+          color: $text-info-color;
+          font-size: $font-size;
+          cursor: pointer;
+        }
+      }
+      &.service-area-intro {
+        width: 100%;
+        textarea {
+          display: block;
+          min-width: 100%;
+          width: 100%;
+          max-width: 100%;
+          min-height: 100px;
+          height: 150px;
+          max-height: 150px;
+          line-height: $membership-card-form-height - 12;
+          border: 1px solid #bfbfbf;
+          font-size: $font-size;
+          color: #a7a7a7;
+          padding: 6px 20px;
+          border-radius: 2px;
+          &:focus {
+            border-color: darken(#bfbfbf, 80%);
+            outline: none;
+          }
+        }
+      }
+      &.cancel-confirm {
+        margin-top: 50px;
+        font-size: 0;
+        button {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+          color: #fff;
+          padding: 10px 32px;
+          text-align: center;
+          border-radius: 40px;
+          &:not(:last-of-type) {
+            margin-right: 40px;
+          }
+        }
+        .cancel {
+          background-color: #eaeff9;
+          &:hover {
+            background-color: darken(#eaeff9, 8%);
+          }
+          &:focus {
+            background-color: darken(#eaeff9, 14%);
+          }
+        }
+        .confirm {
+          background-color: $btn-bg-color;
+          &:hover {
+            background-color: darken($btn-bg-color, 8%);
+          }
+          &:focus {
+            background-color: darken($btn-bg-color, 14%);
+          }
+        }
+      }
+    }
+  }
+  .membership-card-info {
+    $div-space-between: 60px;
+    width: calc(100% - #{$width} - 20px);
+    float: right;
+    background-color: #fff;
+    padding: 5px 5px 110px;
+    .membership-card-category {
+      width: 100%;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      //margin-bottom: 15px;
+      color: $text-info-color;
+      font-size: $font-size;
+      font-weight: normal;
+      span {
+        display: inline-block;
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50);
+          color: inherit;
+          background-color: currentColor;
+          width: 30px;
+          height: 1px;
+        }
+        &::before {
+          left: -45px;
+        }
+        &::after {
+          right: -45px;
+        }
+      }
+    }
+    .membership-card-item {
+      $border-radius: 4px;
+      $padding-left: 16px;
+      position: relative;
+      float: left;
+      width: 240px;
+      height: 150px;
+      padding-left: $padding-left;
+      margin: 15px;
+      background-color: $main-content-bg-color;
+      border-radius: $border-radius;
+      color: $text-info-color;
+      font-size: $font-size - 2;
+      .name {
+        width: calc(100% - 40px);
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: normal;
+        @extend %ellipsis;
+      }
+      .type,
+      .allotted-time,
+      .price {
+        width: calc(100% - #{$padding-left});
+        height: 22px;
+        line-height: 22px;
+        font-size: $font-size - 2;
+        @extend %ellipsis;
+      }
+      .category {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        width: calc(100% - #{$padding-left});
+        text-align: right;
+        height: 24px;
+        line-height: 24px;
+        padding-right: calc(#{$padding-left} / 2);
+        font-size: $font-size - 2;
+        @extend %ellipsis;
+      }
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+        border: $border-radius;
+        &:hover {
+          color: #eee;
+        }
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 30px;
+          height: 3px;
+          color: #fff;
+          background-color: currentColor;
+          border-radius: 3px;
+          transform-origin: center;
+        }
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+          transform: translate(-50%, -50%) rotate(135deg);
+        }
+      }
+    }
+    .membership-card-add-btn {
+      position: relative;
+      float: left;
+      width: 240px;
+      height: 150px;
+      margin: 15px;
+      border: 2px dashed #bfbfbf;
+      border-radius: 4px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 5px;
+        background-color: $main-content-bg-color;
+        border-radius: 3px;
+      }
+      &::before {
+        transform: translate(-50%, -50%);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center;
+      }
+    }
+  }
+
+
+}

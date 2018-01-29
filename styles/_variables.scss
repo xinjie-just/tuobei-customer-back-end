@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+// 文本主要颜色
+$text-color: #505050;
+
+// 文本强调颜色
+$text-info-color: #2b2b2b;
+
+// 文本强调颜色，强调背景颜色，header部分背景颜色
+$main-color: #5974c8;
+
+// 主要内容背景颜色
+$main-content-bg-color: #ebeff9;
+
+// 菜单导航背景颜色
+$menu-bg-color: #37486b;
+
+// logo背景颜色
+$logo-bg-color: #506bbf;
+
+// 按钮默认背景颜色
+$btn-bg-color: #70e1bd;
+
+// 按钮鼠标悬浮背景颜色
+$btn-hover-bg-color: #4edaad;
+
+// 按钮鼠标点击背景颜色
+$btn-focus-bg-color: #35d5a2;
+
+// 文本字号
+$font-size: 14px;
+
+// header部分高度
+$header-height: 64px;
+
+// footer部分高度(没有footer时，将其高度设置为0px，但不是0。有高度时，设置相应的高度)
+$footer-height: 0px;
+
+// 菜单栏宽
+$sidebar-menu-width: 180px;
+
+

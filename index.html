@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>基本信息 | 拓贝个人投资后台管理系统</title>
+        <meta name="keywords" content="拓贝个人投资后台管理系统">
+        <meta name="description" content="拓贝个人投资后台管理系统">
+        <!--<link rel="stylesheet" href="styles/bootstrap.min.css">-->
+        <link rel="stylesheet" href="styles/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="styles/build_standalone.css">
+        <link rel="stylesheet" href="styles/tuobei-customer-back-end.css">
+    </head>
+    <body>
+        <header id="header" role="banner">
+            <!-- 首页logo不含 <a> 标签，其他页面含有 -->
+            <h1 class="logo">个人投资后台管理系统</h1>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
+                    </li>
+                    <li class="user-menu">
+                        <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息" class="active">
+                        <i class="iconfont icon-basic-info"></i>
+                        <span>基本信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录">
+                        <i class="iconfont icon-record"></i>
+                        <span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="卡管理">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i>
+                        <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main id="main" role="main">
+            <form action="#" method="" id="basicInfoForm" name="basicInfoForm" class="basic-info-form">
+                <!-- 必填，必选字段在 label 中添加 required 类 -->
+                <div class="name">
+                    <label for="name" class="required">姓名</label>
+                    <input type="text" name="name" id="name" placeholder="请输入投资人姓名">
+                </div>
+                <div class="phone">
+                    <label for="phone" class="required">联系方式</label>
+                    <input type="text" name="phone" id="phone" placeholder="请输入联系方式">
+                </div>
+                <div class="sex">
+                    <label for="sex" class="required">性别</label>
+                    <select name="sex" id="sex">
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+                <div class="full-address">
+                    <label for="fullAddress" class="required">详细地址</label>
+                    <input type="text" name="fullAddress" id="fullAddress" placeholder="请输入详细地址">
+                </div>
+                <div class="apply-time datetime">
+                    <label for="applyTime" class="required">申请时间</label>
+                    <input type="text" name="applyTime" id="applyTime" readonly placeholder="请选择申请时间">
+                </div>
+                <div class="pass-time datetime">
+                    <label for="passTime" class="required">通过时间</label>
+                    <input type="text" name="passTime" id="passTime" readonly placeholder="请选择通过时间">
+                </div>
+                <div class="cancel-confirm">
+                    <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
+                    <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
+                </div>
+            </form>
+        </main>
+        <footer id="footer" role="contentinfo"></footer>
+        <script src="scripts/jquery.min.js"></script>
+        <!--<script src="scripts/bootstrap.min.js"></script>-->
+        <script src="scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="scripts/bootstrap-datetimepicker.zh-CN.js"></script>
+        <script src="scripts/jquery-validate.min.js"></script>
+        <script src="scripts/tuobei-customer-back-end.js"></script>
+        <script>
+            var start = $('#applyTime').datetimepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd hh:ii:ss',
+                language: 'zh-CN',
+                todayHighlight: true,
+                zIndexOffset: 1000  // 这个属性必须设置成不小于999
+            });
+
+            var end = $('#passTime').datetimepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd hh:ii:ss',
+                language: 'zh-CN',
+                todayHighlight: true,
+                zIndexOffset: 1000  // 这个属性必须设置成不小于999
+            });
+
+        </script>
+    </body>
+</html>

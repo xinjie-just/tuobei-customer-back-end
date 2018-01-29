@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>消费记录 | 拓贝个人投资后台管理系统</title>
+        <meta name="keywords" content="拓贝个人投资后台管理系统">
+        <meta name="description" content="拓贝个人投资后台管理系统">
+        <link rel="stylesheet" href="styles/file-upload.css">
+        <link rel="stylesheet" href="styles/tuobei-customer-back-end.css">
+    </head>
+    <body>
+        <header id="header" role="banner">
+            <!-- 首页logo不含 <a> 标签，其他页面含有 -->
+            <h1 class="logo">
+                <a href="#" class="logo-link" title="回到首页">个人投资后台管理系统</a>
+            </h1>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
+                    </li>
+                    <li class="user-menu">
+                        <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息">
+                        <i class="iconfont icon-basic-info"></i>
+                        <span>基本信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录" class="active">
+                        <i class="iconfont icon-record"></i>
+                        <span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="卡管理">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i>
+                        <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main id="main" role="main">
+            <div class="handle-list">
+                <div class="condition-list">
+                    <div class="product-name">
+                        <label for="productName">商品名称</label>
+                        <input type="text" name="productName" id="productName" placeholder="请输入商品名称">
+                    </div>
+                    <div class="member-level">
+                        <label for="memberLevel">会员等级</label>
+                        <select name="memberLevel" id="memberLevel">
+                            <option value="0">一级会员</option>
+                            <option value="1">二级会员</option>
+                            <option value="2">三级会员</option>
+                        </select>
+                    </div>
+                    <div class="order-time">
+                        <label for="orderTime">下单时间</label>
+                        <input type="text" name="orderTime" id="orderTime" placeholder="请输入下单时间">
+                    </div>
+                    <div class="order-number">
+                        <label for="orderNumber">订单号</label>
+                        <input type="text" name="orderNumber" id="orderNumber" placeholder="请输入订单号">
+                    </div>
+                    <div class="user-phone">
+                        <label for="userPhone">消费者手机号</label>
+                        <input type="text" name="userPhone" id="userPhone" placeholder="请输入消费者手机号">
+                    </div>
+                </div>
+                <div class="handle-method">
+                    <button class="filter" title="筛选" id="filterRecord">筛选</button>
+                    <button class="export" title="导出" id="exportRecord">导出</button>
+                </div>
+            </div>
+            <div class="record-list">
+                <table class="record-list-table">
+                    <thead>
+                    <tr>
+                        <th class="order-number">订单号</th>
+                        <th class="product-name">商品名称</th>
+                        <th class="user-phone">消费者手机号</th>
+                        <th class="member-level">会员等级</th>
+                        <th class="product-price">商品价格</th>
+                        <th class="payment-method">支付方式</th>
+                        <th class="order-time">下单时间</th>
+                        <th class="order-status">订单状况</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- paid 已支付, not-paid 未支付, abolish 取消, unknown 未知 -->
+                    <tr>
+                        <td class="order-number">999999</td>
+                        <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                        <td class="user-phone">18227752005</td>
+                        <td class="member-level">一级会员</td>
+                        <td class="product-price">65(元)</td>
+                        <td class="payment-method">支付宝</td>
+                        <td class="order-time">2018-12-31 23:59:59</td>
+                        <td class="order-status paid">已支付</td>
+                    </tr>
+                    <tr>
+                        <td class="order-number">999999</td>
+                        <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                        <td class="user-phone">18227752005</td>
+                        <td class="member-level">一级会员</td>
+                        <td class="product-price">65(元)</td>
+                        <td class="payment-method">支付宝</td>
+                        <td class="order-time">2018-12-31 23:59:59</td>
+                        <td class="order-status not-paid">未支付</td>
+                    </tr>
+                    <tr>
+                        <td class="order-number">999999123456</td>
+                        <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                        <td class="user-phone">18227752005</td>
+                        <td class="member-level">二级会员</td>
+                        <td class="product-price">3.99(元)</td>
+                        <td class="payment-method">支付宝</td>
+                        <td class="order-time">2018-12-31 23:59:59</td>
+                        <td class="order-status abolish">取消</td>
+                    </tr>
+                    <tr>
+                        <td class="order-number">999999</td>
+                        <td class="product-name">01商品名称，01商品名称，01商品名称</td>
+                        <td class="user-phone">18227752005</td>
+                        <td class="member-level">三级会员</td>
+                        <td class="product-price">99999.99(元)</td>
+                        <td class="payment-method">微信支付</td>
+                        <td class="order-time">2018-12-31 23:59:59</td>
+                        <td class="order-status unknown">未知</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <nav class="pagination-wrapper" aria-label="Page navigation">
+                    <ul class="pagination">
+                        <!--给不能点击的链接添加 .disabled 类-->
+                        <li class="disabled">
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <!--给当前页添加 .active 类-->
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+        <footer id="footer" role="contentinfo">
+        </footer>
+        <script src="//at.alicdn.com/t/font_549052_ufus5xhprmn53ik9.js"></script>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/tuobei-customer-back-end.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>
