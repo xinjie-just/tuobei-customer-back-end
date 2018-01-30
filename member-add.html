@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>添加会员 | 拓贝个人投资后台管理系统</title>
+        <meta name="keywords" content="拓贝个人投资后台管理系统">
+        <meta name="description" content="拓贝个人投资后台管理系统">
+        <link rel="stylesheet" href="styles/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="styles/build_standalone.css">
+        <link rel="stylesheet" href="styles/tuobei-customer-back-end.css">
+    </head>
+    <body>
+        <header id="header" role="banner">
+            <!-- 首页logo不含 <a> 标签，其他页面含有 -->
+            <h1 class="logo">个人投资后台管理系统</h1>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
+                    </li>
+                    <li class="user-menu">
+                        <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息">
+                        <i class="iconfont icon-basic-info"></i>
+                        <span>基本信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录">
+                        <i class="iconfont icon-record"></i>
+                        <span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="卡管理">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i>
+                        <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理" class="active">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main id="main" role="main">
+            <form action="#" method="" id="memberAddForm" name="memberAddForm" class="member-add-form">
+                <!-- 必填，必选字段在 label 中添加 required 类 -->
+                <div class="name">
+                    <label for="name" class="required">姓名</label>
+                    <input type="text" name="name" id="name" placeholder="请输入投资人姓名">
+                </div>
+                <div class="phone">
+                    <label for="phone" class="required">联系方式</label>
+                    <input type="text" name="phone" id="phone" placeholder="请输入联系方式">
+                </div>
+                <div class="sex">
+                    <label for="sex" class="required">性别</label>
+                    <select name="sex" id="sex">
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+                <div class="member-level">
+                    <label for="memberLevel" class="required">会员等级</label>
+                    <select name="sex" id="memberLevel">
+                        <option value="0">一级会员</option>
+                        <option value="1">二级会员</option>
+                        <option value="2">三级会员</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <label for="card" class="required">享受投资卡</label>
+                    <input type="text" name="card" id="card" placeholder="请输入享受投资卡">
+                </div>
+                <div class="merchant">
+                    <label for="merchant" class="required">享受商家</label>
+                    <input type="text" name="merchant" id="merchant" placeholder="请输入享受商家">
+                </div>
+                <div class="discount">
+                    <label for="discount" class="required">享受折扣</label>
+                    <select name="sex" id="discount">
+                        <option value="0">90%</option>
+                        <option value="1">80%</option>
+                        <option value="2">70%</option>
+                    </select>
+                </div>
+                <div class="cost-time datetime">
+                    <label for="costTime" class="required">消费时间</label>
+                    <input type="text" name="costTime" id="costTime" readonly placeholder="请选择消费时间">
+                </div>
+                <div class="money-limit">
+                    <label for="moneyLimit" class="required">金额限制</label>
+                    <select name="sex" id="moneyLimit">
+                        <option value="0">100元</option>
+                        <option value="1">200元</option>
+                        <option value="2">300元</option>
+                    </select>
+                </div>
+                <div class="merchant-limit">
+                    <label for="merchantLimit" class="required">商家限制</label>
+                    <select name="sex" id="merchantLimit">
+                        <option value="0">不限制</option>
+                        <option value="1">奇迹健身</option>
+                    </select>
+                </div>
+                <div class="cancel-confirm">
+                    <button class="cancel" id="cancel" name="cancel" title="取消">取消</button>
+                    <button class="confirm" id="confirm" name="confirm" title="确定">确定</button>
+                </div>
+            </form>
+        </main>
+        <footer id="footer" role="contentinfo"></footer>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="scripts/bootstrap-datetimepicker.zh-CN.js"></script>
+        <script src="scripts/jquery-validate.min.js"></script>
+        <script src="scripts/tuobei-customer-back-end.js"></script>
+        <script>
+            $('#costTime').datetimepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd hh:ii:ss',
+                language: 'zh-CN',
+                todayHighlight: true,
+                zIndexOffset: 1000  // 这个属性必须设置成不小于999
+            });
+        </script>
+    </body>
+</html>

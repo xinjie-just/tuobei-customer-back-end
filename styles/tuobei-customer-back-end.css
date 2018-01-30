@@ -300,11 +300,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .content-wrapper .withdraw-form > div .money-wrapper::after, .content-wrapper .withdraw-form > div.handle::after, .content-wrapper .card-management-content .card-list::after, .content-wrapper .subbranch-info::after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list::after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list::after {
+.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .withdraw-nav::after, .member-add-form::after, .member-handle-list::after, .member-handle-list .member-condition-list::after, .content-wrapper .withdraw-form > div .money-wrapper::after, .content-wrapper .withdraw-form > div.handle::after, .content-wrapper .card-management-content .card-list::after, .content-wrapper .subbranch-info::after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list::after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list::after {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .card-management-content .card-list:after, .content-wrapper .subbranch-info:after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list:after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list:after {
+.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .withdraw-nav:after, .member-add-form:after, .member-handle-list:after, .member-handle-list .member-condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .card-management-content .card-list:after, .content-wrapper .subbranch-info:after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list:after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list:after {
   content: "";
   display: table;
   clear: both;
@@ -333,7 +333,7 @@ label:hover {
   opacity: .8;
 }
 
-#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .content-wrapper .card-management-content .add-card-wrapper > div input, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
+#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-record-list table.record-list-table thead tr th, .member-record-list table.record-list-table tbody tr td, .content-wrapper .card-management-content .add-card-wrapper > div input, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
 .content-wrapper .membership-card-info .membership-card-item .allotted-time,
 .content-wrapper .membership-card-info .membership-card-item .price, .content-wrapper .membership-card-info .membership-card-item .category {
   overflow: hidden;
@@ -757,7 +757,6 @@ label.error {
   width: 160px;
   height: 30px;
   line-height: 28px;
-  padding-right: 1em;
   padding-left: 1em;
 }
 .handle-list .condition-list > div select:focus {
@@ -969,45 +968,39 @@ label.error {
   border-color: #ddd;
 }
 
-/*======*/
-.content-wrapper {
-  /*余额提现*/
-  /*银行卡管理*/
-  /*分店管理*/
-  /*商家卡管理*/
-}
-.content-wrapper .withdraw-nav {
-  width: 200px;
-  float: left;
-  background-color: #fff;
-}
-.content-wrapper .withdraw-nav a {
-  display: block;
+/*===余额提现===*/
+.withdraw-nav {
   width: 100%;
   height: 40px;
+  background-color: #5974c8;
+}
+.withdraw-nav a {
+  display: block;
+  float: left;
+  height: 40px;
   line-height: 40px;
-  text-align: center;
-  color: #2b2b2b;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: #fff;
   font-size: 14px;
 }
-.content-wrapper .withdraw-nav a.active, .content-wrapper .withdraw-nav a:hover {
-  background-color: #5974c8;
-  color: #fff;
+.withdraw-nav a.active, .withdraw-nav a:hover {
+  background-color: #37486b;
 }
-.content-wrapper .withdraw-content {
-  width: calc(100% - 200px - 20px);
-  float: right;
+
+.withdraw-content {
+  width: 100%;
   background-color: #fff;
   padding: 15px 15px 120px;
 }
-.content-wrapper .withdraw-content .my-count {
+.withdraw-content .my-count {
   font-size: 14px;
   color: #2b2b2b;
   margin: 60px auto 0;
   text-align: center;
   line-height: 1.8em;
 }
-.content-wrapper .withdraw-content .value {
+.withdraw-content .value {
   margin: 30px auto 0;
   font-size: 30px;
   color: #2b2b2b;
@@ -1015,15 +1008,15 @@ label.error {
   text-transform: uppercase;
   font-weight: bold;
 }
-.content-wrapper .withdraw-content .value span {
+.withdraw-content .value span {
   font-size: 50px;
   margin-left: 4px;
 }
-.content-wrapper .withdraw-content .withdraw {
+.withdraw-content .withdraw {
   text-align: center;
   margin: 70px auto 0;
 }
-.content-wrapper .withdraw-content .withdraw a {
+.withdraw-content .withdraw a {
   display: inline-block;
   padding: 10px 38px;
   border-radius: 40px;
@@ -1031,11 +1024,338 @@ label.error {
   color: #fff;
   background-color: #70e1bd;
 }
-.content-wrapper .withdraw-content .withdraw a:hover {
+.withdraw-content .withdraw a:hover {
   background-color: #4edaad;
 }
-.content-wrapper .withdraw-content .withdraw a:focus {
+.withdraw-content .withdraw a:focus {
   background-color: #35d5a2;
+}
+
+/*===会员配置管理===*/
+/*会员增加*/
+.member-add-form {
+  width: 100%;
+  background-color: #fff;
+  padding: 15px 60px 100px 60px;
+}
+.member-add-form > div {
+  float: left;
+  width: calc(50% - 60px / 2);
+  min-width: 240px;
+  margin-bottom: 18px;
+}
+.member-add-form > div:nth-of-type(2n + 1) {
+  margin-right: 60px;
+}
+.member-add-form > div label:not(.error) {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+  color: #2b2b2b;
+}
+.member-add-form > div label:not(.error).required::before {
+  content: "*";
+  position: absolute;
+  left: -8px;
+  font-size: 14px;
+  color: #f00;
+}
+.member-add-form > div label.error {
+  width: 100%;
+  display: block;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+}
+.member-add-form > div input {
+  width: 100%;
+  display: block;
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  color: #2b2b2b;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+.member-add-form > div input:focus {
+  border-color: black;
+  outline: none;
+}
+.member-add-form > div.datetime {
+  position: relative;
+}
+.member-add-form > div.datetime input {
+  background-color: #ccc;
+  cursor: pointer;
+}
+.member-add-form > div select {
+  width: 100%;
+  height: 34px;
+  line-height: 32px;
+  padding-left: 20px;
+  border: 1px solid #bfbfbf;
+  color: #a7a7a7;
+  font-size: 14px;
+  cursor: pointer;
+}
+.member-add-form > div select:focus {
+  border-color: black;
+  outline: none;
+}
+.member-add-form > div select option {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #2b2b2b;
+  font-size: 14px;
+  cursor: pointer;
+}
+.member-add-form > div.cancel-confirm {
+  margin-top: 50px;
+  font-size: 0;
+}
+.member-add-form > div.cancel-confirm button {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 32px;
+  text-align: center;
+  border-radius: 40px;
+}
+.member-add-form > div.cancel-confirm button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.member-add-form > div.cancel-confirm .cancel {
+  background-color: #eaeff9;
+}
+.member-add-form > div.cancel-confirm .cancel:hover {
+  background-color: #cad7f0;
+}
+.member-add-form > div.cancel-confirm .cancel:focus {
+  background-color: #b2c5e9;
+}
+.member-add-form > div.cancel-confirm .confirm {
+  background-color: #70e1bd;
+}
+.member-add-form > div.cancel-confirm .confirm:hover {
+  background-color: #4edaad;
+}
+.member-add-form > div.cancel-confirm .confirm:focus {
+  background-color: #35d5a2;
+}
+
+/*会员配置管理*/
+.member-handle-list {
+  padding: 17px 10px;
+  background-color: #fff;
+}
+.member-handle-list .add {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 16px;
+  padding-left: 16px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #70e1bd;
+}
+.member-handle-list .add:hover {
+  background-color: #4edaad;
+}
+.member-handle-list .add:focus {
+  background-color: #35d5a2;
+}
+.member-handle-list .member-condition-list {
+  float: right;
+}
+.member-handle-list .member-condition-list > div {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.member-handle-list .member-condition-list > div:not(:last-of-type) {
+  margin-right: 10px;
+  font-size: 0;
+}
+.member-handle-list .member-condition-list > div input {
+  display: block;
+  font-size: 12px;
+  color: #2b2b2b;
+  border: 1px solid #bfbfbf;
+  width: 160px;
+  height: 30px;
+  line-height: 28px;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.member-handle-list .member-condition-list > div input:focus {
+  border-color: black;
+  outline: none;
+}
+.member-handle-list .member-condition-list > div select {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #2b2b2b;
+  border: 1px solid #bfbfbf;
+  width: 160px;
+  height: 30px;
+  line-height: 28px;
+  padding-left: 1em;
+}
+.member-handle-list .member-condition-list > div select:focus {
+  border-color: black;
+  outline: none;
+}
+.member-handle-list .member-condition-list > div select option {
+  line-height: 1.5;
+}
+.member-handle-list .handle-method {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.member-handle-list .handle-method button {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 16px;
+  padding-left: 16px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+.member-handle-list .handle-method button:not(:last-of-type) {
+  margin-right: 10px;
+}
+.member-handle-list .handle-method button.filter {
+  background-color: #5974c8;
+}
+.member-handle-list .handle-method button.filter:hover {
+  background-color: #3e5cba;
+}
+.member-handle-list .handle-method button.filter:focus {
+  background-color: #3651a3;
+}
+.member-handle-list .handle-method button.export {
+  background-color: #70e1bd;
+}
+.member-handle-list .handle-method button.export:hover {
+  background-color: #4edaad;
+}
+.member-handle-list .handle-method button.export:focus {
+  background-color: #35d5a2;
+}
+
+.member-record-list {
+  background-color: #fff;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.member-record-list table.record-list-table {
+  width: 100%;
+  table-layout: fixed;
+}
+.member-record-list table.record-list-table thead tr {
+  height: 40px;
+  line-height: 40px;
+  background-color: #5974c8;
+}
+.member-record-list table.record-list-table thead tr th {
+  padding-right: 1em;
+  padding-left: 1em;
+  font-size: 14px;
+  color: #fff;
+}
+.member-record-list table.record-list-table tbody tr {
+  height: 40px;
+  line-height: 39px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.member-record-list table.record-list-table tbody tr td {
+  padding-right: 1em;
+  padding-left: 1em;
+  font-size: 12px;
+  color: #2b2b2b;
+}
+.member-record-list table.record-list-table tbody tr td.order-status {
+  padding-left: calc(1em + 18px);
+  position: relative;
+}
+.member-record-list table.record-list-table tbody tr td.order-status::before {
+  content: "";
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.member-record-list table.record-list-table tbody tr td.paid::before {
+  background-color: #00ff42;
+}
+.member-record-list table.record-list-table tbody tr td.not-paid::before {
+  background-color: #f00;
+}
+.member-record-list table.record-list-table tbody tr td.abolish::before {
+  background-color: #7d7d7d;
+}
+.member-record-list table.record-list-table tbody tr td.unknown::before {
+  background-color: #fefe00;
+}
+.member-record-list table.record-list-table .order-number {
+  width: 30%;
+}
+.member-record-list table.record-list-table .product-name {
+  width: 40%;
+}
+.member-record-list table.record-list-table .user-phone {
+  width: 120px;
+  min-width: 15%;
+}
+.member-record-list table.record-list-table .member-level {
+  width: 100px;
+  min-width: 10%;
+}
+.member-record-list table.record-list-table .product-price {
+  width: 120px;
+  min-width: 15%;
+}
+.member-record-list table.record-list-table .payment-method {
+  width: 100px;
+  min-width: 10%;
+}
+.member-record-list table.record-list-table .order-time {
+  width: 150px;
+  min-width: 20%;
+}
+.member-record-list table.record-list-table .order-status {
+  width: 100px;
+  min-width: 10%;
+}
+
+/*======*/
+.content-wrapper {
+  /*银行卡管理*/
+  /*分店管理*/
+  /*商家卡管理*/
 }
 .content-wrapper .withdraw-form {
   width: calc(100% - 200px - 20px);
