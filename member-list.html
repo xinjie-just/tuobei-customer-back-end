@@ -66,8 +66,8 @@
             <div class="member-handle-list">
                 <button class="add" title="新增" id="add-member">新增</button>
                 <div class="member-condition-list">
-                    <div class="member-name">
-                        <input type="text" name="memberName" id="memberName" placeholder="联系方式">
+                    <div class="member-phone">
+                        <input type="text" name="memberPhone" id="memberPhone" placeholder="联系方式">
                     </div>
                     <div class="member-level">
                         <select name="memberLevel" id="memberLevel">
@@ -77,14 +77,14 @@
                             <option value="2">三级会员</option>
                         </select>
                     </div>
-                    <div class="member-phone">
-                        <input type="text" name="memberPhone" id="memberPhone" placeholder="联系方式">
+                    <div class="member-name">
+                        <input type="text" name="memberName" id="memberName" placeholder="会员姓名">
                     </div>
                     <button class="filter" title="筛选" id="filterRecord">筛选</button>
                 </div>
             </div>
-            <div class="member-record-list">
-                <table class="record-list-table">
+            <div class="member-list">
+                <table class="member-list-table">
                     <thead>
                     <tr>
                         <th class="member-name">会员姓名</th>
@@ -113,8 +113,8 @@
                         <td class="money-limit">999999.99(元)</td>
                         <td class="merchant-limit">奇迹健身奇迹健身</td>
                         <td class="handle">
-                            <i class="iconfont icon-update"></i>
-                            <i class="iconfont icon-delete"></i>
+                            <i class="iconfont icon-update" title="编辑"></i>
+                            <i class="iconfont icon-delete" title="删除"></i>
                         </td>
                     </tr>
                     <tr>
@@ -129,8 +129,8 @@
                         <td class="money-limit">111111.99(元)</td>
                         <td class="merchant-limit">奇迹健身奇迹健身</td>
                         <td class="handle">
-                            <i class="iconfont icon-update"></i>
-                            <i class="iconfont icon-delete"></i>
+                            <i class="iconfont icon-update" title="编辑"></i>
+                            <i class="iconfont icon-delete" title="删除"></i>
                         </td>
                     </tr>
                     </tbody>

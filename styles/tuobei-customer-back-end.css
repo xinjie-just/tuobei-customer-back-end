@@ -300,11 +300,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .withdraw-nav::after, .member-add-form::after, .member-handle-list::after, .member-handle-list .member-condition-list::after, .content-wrapper .withdraw-form > div .money-wrapper::after, .content-wrapper .withdraw-form > div.handle::after, .content-wrapper .card-management-content .card-list::after, .content-wrapper .subbranch-info::after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list::after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list::after {
+.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .withdraw-nav::after, .card-management-content .card-list::after, .member-add-form::after, .member-handle-list::after, .member-handle-list .member-condition-list::after, .member-list-table tbody tr td.handle::after, .content-wrapper .withdraw-form > div .money-wrapper::after, .content-wrapper .withdraw-form > div.handle::after, .content-wrapper .subbranch-info::after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list::after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list::after {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .withdraw-nav:after, .member-add-form:after, .member-handle-list:after, .member-handle-list .member-condition-list:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .card-management-content .card-list:after, .content-wrapper .subbranch-info:after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list:after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list:after {
+.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .withdraw-nav:after, .card-management-content .card-list:after, .member-add-form:after, .member-handle-list:after, .member-handle-list .member-condition-list:after, .member-list-table tbody tr td.handle:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .subbranch-info:after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list:after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list:after {
   content: "";
   display: table;
   clear: both;
@@ -333,7 +333,8 @@ label:hover {
   opacity: .8;
 }
 
-#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-record-list table.record-list-table thead tr th, .member-record-list table.record-list-table tbody tr td, .content-wrapper .card-management-content .add-card-wrapper > div input, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
+#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .card-management-content .add-card-wrapper > div input, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-list-table tr th,
+.member-list-table tr td, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
 .content-wrapper .membership-card-info .membership-card-item .allotted-time,
 .content-wrapper .membership-card-info .membership-card-item .price, .content-wrapper .membership-card-info .membership-card-item .category {
   overflow: hidden;
@@ -818,6 +819,32 @@ label.error {
 .record-list table.record-list-table {
   width: 100%;
   table-layout: fixed;
+  /*.order-number {
+    width: 30%;
+  }
+  .product-name {
+    width: 40%;
+  }
+  .user-phone {
+    width: 120px;
+    min-width: 15%;
+  }
+  .member-level {
+    width: 100px;
+    min-width: 10%;
+  }
+  .product-price {
+    width: 120px;
+    min-width: 15%;
+  }
+  .payment-method {
+    width: 100px;
+    min-width: 10%;
+  }
+  .order-time {
+    width: 150px;
+    min-width: 20%;
+  }*/
 }
 .record-list table.record-list-table thead tr {
   height: 40px;
@@ -867,35 +894,8 @@ label.error {
 .record-list table.record-list-table tbody tr td.unknown::before {
   background-color: #fefe00;
 }
-.record-list table.record-list-table .order-number {
-  width: 30%;
-}
-.record-list table.record-list-table .product-name {
-  width: 40%;
-}
-.record-list table.record-list-table .user-phone {
-  width: 120px;
-  min-width: 15%;
-}
-.record-list table.record-list-table .member-level {
-  width: 100px;
-  min-width: 10%;
-}
-.record-list table.record-list-table .product-price {
-  width: 120px;
-  min-width: 15%;
-}
-.record-list table.record-list-table .payment-method {
-  width: 100px;
-  min-width: 10%;
-}
-.record-list table.record-list-table .order-time {
-  width: 150px;
-  min-width: 20%;
-}
 .record-list table.record-list-table .order-status {
   width: 100px;
-  min-width: 10%;
 }
 
 /*分页*/
@@ -1031,6 +1031,337 @@ label.error {
   background-color: #35d5a2;
 }
 
+/*银行卡管理*/
+.card-management-content {
+  position: relative;
+  padding-bottom: 200px;
+}
+.card-management-content .card-list li {
+  z-index: 9;
+  position: relative;
+  float: left;
+  width: 250px;
+  height: 90px;
+  border-radius: 6px;
+  margin: 15px 10px;
+  padding-top: 10px;
+  padding-left: 80px;
+  color: #fff;
+  cursor: pointer;
+}
+.card-management-content .card-list li.selected::before, .card-management-content .card-list li.active::before {
+  z-index: 10;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.5) url("../imgs/selected.png") no-repeat center/30px;
+}
+.card-management-content .card-list li:nth-of-type(3n + 1) {
+  background-color: #d81e06;
+}
+.card-management-content .card-list li:nth-of-type(3n + 1):hover {
+  background-color: #b01805;
+}
+.card-management-content .card-list li:nth-of-type(3n + 1):focus {
+  background-color: #931404;
+}
+.card-management-content .card-list li:nth-of-type(3n + 2) {
+  background-color: #13227a;
+}
+.card-management-content .card-list li:nth-of-type(3n + 2):hover {
+  background-color: #0e1857;
+}
+.card-management-content .card-list li:nth-of-type(3n + 2):focus {
+  background-color: #09113c;
+}
+.card-management-content .card-list li:nth-of-type(3n + 3) {
+  background-color: #009174;
+}
+.card-management-content .card-list li:nth-of-type(3n + 3):hover {
+  background-color: #006853;
+}
+.card-management-content .card-list li:nth-of-type(3n + 3):focus {
+  background-color: #004a3b;
+}
+.card-management-content .card-list li .bank-name {
+  font-size: 14px;
+  line-height: 26px;
+}
+.card-management-content .card-list li .card-type {
+  font-size: 12px;
+  line-height: 22px;
+}
+.card-management-content .card-list li .card-number {
+  font-size: 14px;
+  line-height: 24px;
+}
+.card-management-content .card-list li .iconfont {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 40px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.card-management-content .card-list .add-card-btn {
+  position: relative;
+  display: block;
+  float: left;
+  height: 90px;
+  width: 250px;
+  border: 2px dashed #a7a7a7;
+  padding-top: 50px;
+  text-align: center;
+  border-radius: 6px;
+  margin: 15px 10px;
+  background-color: transparent;
+}
+.card-management-content .card-list .add-card-btn:hover {
+  background-color: #ebebeb;
+}
+.card-management-content .card-list .add-card-btn:focus {
+  background-color: #dbdbdb;
+}
+.card-management-content .card-list .add-card-btn::before, .card-management-content .card-list .add-card-btn::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  font-weight: 500;
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #eaeff9;
+}
+.card-management-content .card-list .add-card-btn::before {
+  transform: translateX(-50%);
+}
+.card-management-content .card-list .add-card-btn::after {
+  transform: translateX(-50%) rotate(90deg);
+}
+.card-management-content .remove-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  display: block;
+  padding: 10px 38px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #fff;
+}
+.card-management-content .remove-btn.default {
+  background-color: #bebebe;
+  cursor: not-allowed;
+}
+.card-management-content .remove-btn.active {
+  background-color: #70e1bd;
+  cursor: pointer;
+}
+.card-management-content .remove-btn.active:hover {
+  background-color: #4edaad;
+}
+.card-management-content .remove-btn.active:focus {
+  background-color: #35d5a2;
+}
+.card-management-content .remove-card-wrapper {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 5px #eee;
+  padding: 30px 50px 50px;
+  border-radius: 4px;
+}
+.card-management-content .remove-card-wrapper.default {
+  display: none;
+}
+.card-management-content .remove-card-wrapper.active {
+  display: block;
+}
+.card-management-content .remove-card-wrapper .tips {
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle {
+  margin-top: 40px;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button {
+  padding: 10px 32px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 40px;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove {
+  background-color: #eaeff9;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:hover {
+  background-color: #cad7f0;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:focus {
+  background-color: #b2c5e9;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove {
+  background-color: #70e1bd;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:hover {
+  background-color: #4edaad;
+}
+.card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:focus {
+  background-color: #35d5a2;
+}
+.card-management-content .add-card-wrapper {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 5px #eee;
+  padding: 30px;
+  border-radius: 4px;
+}
+.card-management-content .add-card-wrapper.default {
+  display: none;
+}
+.card-management-content .add-card-wrapper.active {
+  display: block;
+}
+.card-management-content .add-card-wrapper > div {
+  font-size: 0;
+}
+.card-management-content .add-card-wrapper > div:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.card-management-content .add-card-wrapper > div label:not(.error) {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  width: 90px;
+  height: 34px;
+  line-height: 34px;
+  position: relative;
+  padding-right: 18px;
+  text-align: right;
+  color: #505050;
+}
+.card-management-content .add-card-wrapper > div label:not(.error).required::after {
+  content: "*";
+  position: absolute;
+  right: 8px;
+  font-size: 14px;
+  color: #f00;
+}
+.card-management-content .add-card-wrapper > div label.error {
+  display: block;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 90px;
+}
+.card-management-content .add-card-wrapper > div input {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 90px);
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  color: #a7a7a7;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+.card-management-content .add-card-wrapper > div input:focus {
+  border-color: black;
+  outline: none;
+}
+.card-management-content .add-card-wrapper > div.verification-code {
+  position: relative;
+}
+.card-management-content .add-card-wrapper > div.verification-code input {
+  padding-right: 150px;
+}
+.card-management-content .add-card-wrapper > div.verification-code .get-verification-code-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 144px;
+  padding-right: 4px;
+  font-size: 12px;
+  text-align: center;
+  color: #70e1bd;
+  height: 34px;
+  line-height: 32px;
+}
+.card-management-content .add-card-wrapper > div.verification-code .get-verification-code-btn:hover {
+  background-color: #efefef;
+}
+.card-management-content .add-card-wrapper > div.add-card-handle {
+  margin-left: 200px;
+  margin-top: 40px;
+  font-size: 0;
+}
+.card-management-content .add-card-wrapper > div.add-card-handle button {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 32px;
+  text-align: center;
+  border-radius: 40px;
+}
+.card-management-content .add-card-wrapper > div.add-card-handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.card-management-content .add-card-wrapper > div.add-card-handle .cancel {
+  background-color: #eaeff9;
+}
+.card-management-content .add-card-wrapper > div.add-card-handle .confirm {
+  background-color: #70e1bd;
+}
+.card-management-content .add-card-wrapper .remove-card-handle {
+  margin-top: 40px;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button {
+  padding: 10px 32px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 40px;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove {
+  background-color: #eaeff9;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove:hover {
+  background-color: #cad7f0;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove:focus {
+  background-color: #b2c5e9;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove {
+  background-color: #70e1bd;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove:hover {
+  background-color: #4edaad;
+}
+.card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove:focus {
+  background-color: #35d5a2;
+}
+
 /*===会员配置管理===*/
 /*会员增加*/
 .member-add-form {
@@ -1161,8 +1492,6 @@ label.error {
   float: left;
   margin-top: 5px;
   margin-bottom: 5px;
-  display: inline-block;
-  vertical-align: middle;
   padding-right: 16px;
   padding-left: 16px;
   height: 30px;
@@ -1224,136 +1553,113 @@ label.error {
 .member-handle-list .member-condition-list > div select option {
   line-height: 1.5;
 }
-.member-handle-list .handle-method {
-  float: right;
+.member-handle-list .member-condition-list .filter {
+  float: left;
   margin-top: 5px;
   margin-bottom: 5px;
-}
-.member-handle-list .handle-method button {
-  display: inline-block;
-  vertical-align: middle;
   padding-right: 16px;
   padding-left: 16px;
+  margin-left: 10px;
   height: 30px;
   line-height: 30px;
   text-align: center;
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
-}
-.member-handle-list .handle-method button:not(:last-of-type) {
-  margin-right: 10px;
-}
-.member-handle-list .handle-method button.filter {
   background-color: #5974c8;
 }
-.member-handle-list .handle-method button.filter:hover {
+.member-handle-list .member-condition-list .filter:hover {
   background-color: #3e5cba;
 }
-.member-handle-list .handle-method button.filter:focus {
+.member-handle-list .member-condition-list .filter:focus {
   background-color: #3651a3;
 }
-.member-handle-list .handle-method button.export {
-  background-color: #70e1bd;
-}
-.member-handle-list .handle-method button.export:hover {
-  background-color: #4edaad;
-}
-.member-handle-list .handle-method button.export:focus {
-  background-color: #35d5a2;
-}
 
-.member-record-list {
+/*会员列表*/
+.member-list {
   background-color: #fff;
   margin-top: 20px;
   padding-bottom: 20px;
 }
-.member-record-list table.record-list-table {
+
+.member-list-table {
   width: 100%;
   table-layout: fixed;
+  /*.member-sex {
+    width: 90px;
+  }
+  .member-phone {
+    width: 130px;
+  }
+  .member-level {
+    width: 100px;
+  }
+  .discount {
+    width: 90px;
+  }
+  .cost-time {
+    width: 150px;
+  }
+  .money-limit {
+    width: 120px;
+  }
+  .merchant-limit {
+    width: 150px;
+  }*/
 }
-.member-record-list table.record-list-table thead tr {
+.member-list-table tr {
   height: 40px;
+}
+.member-list-table tr th,
+.member-list-table tr td {
+  padding-right: 14px;
+  padding-left: 14px;
+}
+.member-list-table thead tr {
   line-height: 40px;
   background-color: #5974c8;
 }
-.member-record-list table.record-list-table thead tr th {
-  padding-right: 1em;
-  padding-left: 1em;
+.member-list-table thead tr th {
   font-size: 14px;
   color: #fff;
 }
-.member-record-list table.record-list-table tbody tr {
-  height: 40px;
+.member-list-table tbody tr {
   line-height: 39px;
   border-bottom: 1px solid #f5f5f5;
 }
-.member-record-list table.record-list-table tbody tr td {
-  padding-right: 1em;
-  padding-left: 1em;
+.member-list-table tbody tr td {
   font-size: 12px;
   color: #2b2b2b;
 }
-.member-record-list table.record-list-table tbody tr td.order-status {
-  padding-left: calc(1em + 18px);
-  position: relative;
+.member-list-table tbody tr td.handle {
+  padding-right: 0;
+  padding-left: 0;
 }
-.member-record-list table.record-list-table tbody tr td.order-status::before {
-  content: "";
-  position: absolute;
-  left: 1em;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform: translateY(-50%);
+.member-list-table tbody tr td .iconfont {
+  float: left;
+  display: block;
+  padding-right: 14px;
+  padding-left: 14px;
+  cursor: pointer;
 }
-.member-record-list table.record-list-table tbody tr td.paid::before {
-  background-color: #00ff42;
+.member-list-table tbody tr td .icon-update {
+  color: #2b2b2b;
 }
-.member-record-list table.record-list-table tbody tr td.not-paid::before {
-  background-color: #f00;
+.member-list-table tbody tr td .icon-update:hover {
+  color: #171717;
 }
-.member-record-list table.record-list-table tbody tr td.abolish::before {
-  background-color: #7d7d7d;
+.member-list-table tbody tr td .icon-delete {
+  color: #f00;
 }
-.member-record-list table.record-list-table tbody tr td.unknown::before {
-  background-color: #fefe00;
+.member-list-table tbody tr td .icon-delete:hover {
+  color: #d60000;
 }
-.member-record-list table.record-list-table .order-number {
-  width: 30%;
-}
-.member-record-list table.record-list-table .product-name {
-  width: 40%;
-}
-.member-record-list table.record-list-table .user-phone {
-  width: 120px;
-  min-width: 15%;
-}
-.member-record-list table.record-list-table .member-level {
-  width: 100px;
-  min-width: 10%;
-}
-.member-record-list table.record-list-table .product-price {
-  width: 120px;
-  min-width: 15%;
-}
-.member-record-list table.record-list-table .payment-method {
-  width: 100px;
-  min-width: 10%;
-}
-.member-record-list table.record-list-table .order-time {
-  width: 150px;
-  min-width: 20%;
-}
-.member-record-list table.record-list-table .order-status {
-  width: 100px;
-  min-width: 10%;
+.member-list-table .handle {
+  width: 90px;
 }
 
 /*======*/
 .content-wrapper {
-  /*银行卡管理*/
   /*分店管理*/
   /*商家卡管理*/
 }
@@ -1486,305 +1792,6 @@ label.error {
   background-color: #4edaad;
 }
 .content-wrapper .withdraw-form > div.handle button.confirm:focus {
-  background-color: #35d5a2;
-}
-.content-wrapper .card-management-content {
-  position: relative;
-  padding-bottom: 200px;
-}
-.content-wrapper .card-management-content .card-list li {
-  z-index: 9;
-  position: relative;
-  float: left;
-  width: 250px;
-  height: 90px;
-  border-radius: 6px;
-  margin: 15px 10px;
-  padding-top: 10px;
-  padding-left: 80px;
-  color: #fff;
-  cursor: pointer;
-}
-.content-wrapper .card-management-content .card-list li.selected::before, .content-wrapper .card-management-content .card-list li.active::before {
-  z-index: 10;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.5) url("../imgs/selected.png") no-repeat center/30px;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1) {
-  background-color: #d81e06;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1):hover {
-  background-color: #b01805;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 1):focus {
-  background-color: #931404;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2) {
-  background-color: #13227a;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2):hover {
-  background-color: #0e1857;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 2):focus {
-  background-color: #09113c;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3) {
-  background-color: #009174;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3):hover {
-  background-color: #006853;
-}
-.content-wrapper .card-management-content .card-list li:nth-of-type(3n + 3):focus {
-  background-color: #004a3b;
-}
-.content-wrapper .card-management-content .card-list li .bank-name {
-  font-size: 14px;
-  line-height: 26px;
-}
-.content-wrapper .card-management-content .card-list li .card-type {
-  font-size: 12px;
-  line-height: 22px;
-}
-.content-wrapper .card-management-content .card-list li .card-number {
-  font-size: 14px;
-  line-height: 24px;
-}
-.content-wrapper .card-management-content .card-list li .icon {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  font-size: 40px;
-  transform: translateY(-50%);
-  color: #fff;
-}
-.content-wrapper .card-management-content .card-list .add-card-btn {
-  position: relative;
-  display: block;
-  float: left;
-  height: 90px;
-  width: 250px;
-  border: 2px dashed #a7a7a7;
-  padding-top: 50px;
-  text-align: center;
-  border-radius: 6px;
-  margin: 15px 10px;
-  background-color: transparent;
-}
-.content-wrapper .card-management-content .card-list .add-card-btn:hover {
-  background-color: #ebebeb;
-}
-.content-wrapper .card-management-content .card-list .add-card-btn:focus {
-  background-color: #dbdbdb;
-}
-.content-wrapper .card-management-content .card-list .add-card-btn .icon {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 34px;
-  font-weight: 500;
-  color: #eaeff9;
-}
-.content-wrapper .card-management-content .remove-btn {
-  position: absolute;
-  bottom: 30px;
-  right: 15px;
-  display: block;
-  padding: 10px 38px;
-  border-radius: 40px;
-  font-size: 14px;
-  color: #fff;
-}
-.content-wrapper .card-management-content .remove-btn.default {
-  background-color: #bebebe;
-  cursor: not-allowed;
-}
-.content-wrapper .card-management-content .remove-btn.active {
-  background-color: #70e1bd;
-  cursor: pointer;
-}
-.content-wrapper .card-management-content .remove-btn.active:hover {
-  background-color: #4edaad;
-}
-.content-wrapper .card-management-content .remove-btn.active:focus {
-  background-color: #35d5a2;
-}
-.content-wrapper .card-management-content .remove-card-wrapper {
-  z-index: 10000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  box-shadow: 0 0 5px #eee;
-  padding: 30px 50px 50px;
-  border-radius: 4px;
-}
-.content-wrapper .card-management-content .remove-card-wrapper.default {
-  display: none;
-}
-.content-wrapper .card-management-content .remove-card-wrapper.active {
-  display: block;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .tips {
-  line-height: 1.6em;
-  text-align: center;
-  font-size: 14px;
-  color: #2b2b2b;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle {
-  margin-top: 40px;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button {
-  padding: 10px 32px;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 40px;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove {
-  background-color: #eaeff9;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:hover {
-  background-color: #cad7f0;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.cancel-remove:focus {
-  background-color: #b2c5e9;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove {
-  background-color: #70e1bd;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:hover {
-  background-color: #4edaad;
-}
-.content-wrapper .card-management-content .remove-card-wrapper .remove-card-handle button.confirm-remove:focus {
-  background-color: #35d5a2;
-}
-.content-wrapper .card-management-content .add-card-wrapper {
-  z-index: 10000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  box-shadow: 0 0 5px #eee;
-  padding: 30px;
-  border-radius: 4px;
-}
-.content-wrapper .card-management-content .add-card-wrapper.default {
-  display: none;
-}
-.content-wrapper .card-management-content .add-card-wrapper.active {
-  display: block;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div {
-  font-size: 0;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div:not(:last-of-type) {
-  margin-bottom: 20px;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div label:not(.error) {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
-  width: 90px;
-  height: 34px;
-  line-height: 34px;
-  position: relative;
-  padding-right: 18px;
-  text-align: right;
-  color: #505050;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div label:not(.error).required::after {
-  content: "*";
-  position: absolute;
-  right: 8px;
-  font-size: 14px;
-  color: #f00;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div label.error {
-  display: block;
-  font-size: 12px;
-  height: 24px;
-  line-height: 24px;
-  margin-left: 90px;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div input {
-  display: inline-block;
-  vertical-align: middle;
-  width: calc(100% - 90px);
-  height: 34px;
-  line-height: 32px;
-  border: 1px solid #bfbfbf;
-  font-size: 14px;
-  color: #a7a7a7;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-radius: 2px;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div input:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle {
-  margin-left: 200px;
-  margin-top: 40px;
-  font-size: 0;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle button {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
-  color: #fff;
-  padding: 10px 32px;
-  text-align: center;
-  border-radius: 40px;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle .cancel {
-  background-color: #eaeff9;
-}
-.content-wrapper .card-management-content .add-card-wrapper > div.add-card-handle .confirm {
-  background-color: #70e1bd;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle {
-  margin-top: 40px;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button {
-  padding: 10px 32px;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 40px;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove {
-  background-color: #eaeff9;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove:hover {
-  background-color: #cad7f0;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.cancel-remove:focus {
-  background-color: #b2c5e9;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove {
-  background-color: #70e1bd;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove:hover {
-  background-color: #4edaad;
-}
-.content-wrapper .card-management-content .add-card-wrapper .remove-card-handle button.confirm-remove:focus {
   background-color: #35d5a2;
 }
 .content-wrapper .subbranch-nav {

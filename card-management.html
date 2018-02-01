@@ -32,118 +32,95 @@
             <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
                 <li>
                     <a href="" title="基本信息">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-basic-info"></use>
-                        </svg>
+                        <i class="iconfont icon-basic-info"></i>
                         <span>基本信息</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="分店管理">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-subbranch"></use>
-                        </svg>
-                        <span>分店管理</span>
-                    </a>
-                </li>
-                <li>
                     <a href="" title="消费记录">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-record"></use>
-                        </svg>
+                        <i class="iconfont icon-record"></i>
                         <span>消费记录</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="商家卡管理">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-card"></use>
-                        </svg>
-                        <span>商家卡管理</span>
+                    <a href="" title="卡管理" class="active">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="提现管理" class="active">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-withdraw"></use>
-                        </svg>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i>
                         <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <main id="main" role="main">
-            <div class="content-wrapper">
-                <nav class="withdraw-nav">
-                    <a href="#" class="withdraw-link" title="余额提现">余额提现</a>
-                    <a href="#" class="withdraw-link active" title="银行卡管理">银行卡管理</a>
-                </nav>
-                <div class="withdraw-content card-management-content">
-                    <ul class="card-list" id="cardList">
-                        <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
-                        <li class="card-item icbc" title="选中删除">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-icbc"></use>
-                            </svg>
-                            <div class="bank-name">中国工商银行</div>
-                            <div class="card-type">储蓄卡</div>
-                            <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                        </li>
-                        <li class="card-item ccb" title="选中删除">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-ccb"></use>
-                            </svg>
-                            <div class="bank-name">中国建设银行</div>
-                            <div class="card-type">储蓄卡</div>
-                            <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                        </li>
-                        <li class="card-item abc" title="选中删除">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-abc"></use>
-                            </svg>
-                            <div class="bank-name">中国农业银行</div>
-                            <div class="card-type">储蓄卡</div>
-                            <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                        </li>
-                        <button type="button" id="addCardBtn" class="add-card-btn" title="新添加银行卡">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-add"></use>
-                            </svg>
-                            新添加银行卡
-                        </button>
-                    </ul>
-                    <button class="remove-btn default" id="removeBtn" type="button" title="不可用(请选中银行卡)">删除</button>
-                    <div class="remove-card-wrapper default" id="removeCardWrapper">
-                        <div class="tips">确认删除</div>
-                        <div class="remove-card-handle">
-                            <button type="button" title="取消" id="cancelRemove" class="cancel-remove">取消</button>
-                            <button type="button" title="确认删除" id="confirmRemove" class="confirm-remove">确定</button>
-                        </div>
+            <nav class="withdraw-nav">
+                <a href="#" class="withdraw-link" title="余额提现">余额提现</a>
+                <a href="#" class="withdraw-link active" title="银行卡管理">银行卡管理</a>
+            </nav>
+            <div class="withdraw-content card-management-content">
+                <ul class="card-list" id="cardList">
+                    <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
+                    <li class="card-item icbc" title="选中删除">
+                        <i class="iconfont icon-icbc"></i>
+                        <div class="bank-name">中国工商银行</div>
+                        <div class="card-type">储蓄卡</div>
+                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
+                    </li>
+                    <li class="card-item ccb" title="选中删除">
+                        <i class="iconfont icon-ccb"></i>
+                        <div class="bank-name">中国建设银行</div>
+                        <div class="card-type">储蓄卡</div>
+                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
+                    </li>
+                    <li class="card-item abc" title="选中删除">
+                        <i class="iconfont icon-abc"></i>
+                        <div class="bank-name">中国农业银行</div>
+                        <div class="card-type">储蓄卡</div>
+                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
+                    </li>
+                    <button type="button" id="addCardBtn" class="add-card-btn" title="新添加银行卡">新添加银行卡</button>
+                </ul>
+                <button class="remove-btn default" id="removeBtn" type="button" title="不可用(请选中银行卡)">删除</button>
+                <div class="remove-card-wrapper default" id="removeCardWrapper">
+                    <div class="tips">确认删除</div>
+                    <div class="remove-card-handle">
+                        <button type="button" title="取消" id="cancelRemove" class="cancel-remove">取消</button>
+                        <button type="button" title="确认删除" id="confirmRemove" class="confirm-remove">确定</button>
                     </div>
-                    <form action="" method="" id="addCardWrapper" class="add-card-wrapper default">
-                        <div class="card-holder">
-                            <label for="cardHolder" class="required">持卡人</label>
-                            <input type="text" id="cardHolder" name="cardHolder" placeholder="请输入持卡人姓名">
-                        </div>
-                        <div class="card-number">
-                            <label for="cardNumber" class="required">银行卡号</label>
-                            <input type="text" id="cardNumber" name="cardNumber" placeholder="请输入银行卡号">
-                        </div>
-                        <div class="card-holder-phone">
-                            <label for="cardHolderPhone" class="required">手机号码</label>
-                            <input type="text" id="cardHolderPhone" name="cardHolderPhone" placeholder="请输入银行预留手机号码">
-                        </div>
-                        <div class="verification-code">
-                            <label for="verificationCode" class="required">验证码</label>
-                            <input type="text" id="verificationCode" name="verificationCode" placeholder="请输入验证码">
-                            <button type="button" title="获取验证码" id="getVerificationCode">获取验证码</button>
-                        </div>
-                        <div class="add-card-handle">
-                            <button type="button" title="取消" id="addCardCancel" class="cancel">取消</button>
-                            <button type="button" title="确认删除" id="addCardConfirm" class="confirm">确定</button>
-                        </div>
-                    </form>
                 </div>
+                <form action="" method="" id="addCardWrapper" class="add-card-wrapper default">
+                    <div class="card-holder">
+                        <label for="cardHolder" class="required">持卡人</label>
+                        <input type="text" id="cardHolder" name="cardHolder" placeholder="请输入持卡人姓名">
+                    </div>
+                    <div class="card-number">
+                        <label for="cardNumber" class="required">银行卡号</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="请输入银行卡号">
+                    </div>
+                    <div class="card-holder-phone">
+                        <label for="cardHolderPhone" class="required">手机号码</label>
+                        <input type="text" id="cardHolderPhone" name="cardHolderPhone" placeholder="请输入银行预留手机号码">
+                    </div>
+                    <div class="verification-code">
+                        <label for="verificationCode" class="required">验证码</label>
+                        <input type="text" id="verificationCode" name="verificationCode" placeholder="请输入验证码">
+                        <button type="button" title="获取验证码" id="getVerificationCode" class="get-verification-code-btn">获取验证码</button>
+                    </div>
+                    <div class="add-card-handle">
+                        <button type="button" title="取消" id="addCardCancel" class="cancel">取消</button>
+                        <button type="button" title="确认删除" id="addCardConfirm" class="confirm">确定</button>
+                    </div>
+                </form>
             </div>
         </main>
         <footer id="footer" role="contentinfo">
