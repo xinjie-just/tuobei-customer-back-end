@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>会员卡列表 | 拓贝个人投资后台管理系统</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="styles/file-upload.css">
+        <link rel="stylesheet" href="styles/tuobei-customer-back-end.css">
+    </head>
+    <body>
+        <header id="header" role="banner">
+            <!-- 首页logo不含 <a> 标签，其他页面含有 -->
+            <h1 class="logo">
+                <a href="#" class="logo-link" title="回到首页">个人投资后台管理系统</a>
+            </h1>
+            <nav class="navbar">
+                <ul class="custom-menu">
+                    <li class="sign-out">
+                        <a href="#" title="退出">退出</a>
+                    </li>
+                    <li class="user-menu">
+                        <img src="imgs/user-img.jpg" class="user-image" alt="User Image">
+                        <span class="user-nickname">Hello,韩雪梅</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
+                <li>
+                    <a href="" title="基本信息">
+                        <i class="iconfont icon-basic-info"></i>
+                        <span>基本信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="消费记录">
+                        <i class="iconfont icon-record"></i>
+                        <span>消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="卡管理" class="active">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="提现管理">
+                        <i class="iconfont icon-withdraw"></i>
+                        <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main id="main" role="main">
+            <ul class="member-card-list">
+                <!-- 会员卡“已经到期”，给 <li> 添加 .dated 类 -->
+                <li class="member-card-item">
+                    <a href="#" title="">
+                        <div class="header">
+                            <span class="type">一对一私教会员次卡</span>
+                            <span class="category">(投资卡)</span>
+                        </div>
+                        <div class="body">
+                            <div class="balance">
+                                <div class="money">&yen; 1000.00</div>
+                                <div class="title">余额</div>
+                            </div>
+                            <div class="buy-date">
+                                <div class="date">2017/05/08</div>
+                                <div class="title">购卡日期</div>
+                            </div>
+                            <div class="dated-date">
+                                <div class="date">2019/05/08</div>
+                                <div class="title">过期日期</div>
+                            </div>
+                            <div class="price">
+                                <div class="money">&yen; 2300.00</div>
+                                <div class="title">卡价格</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="member-card-item dated">
+                    <a href="#" title="">
+                        <div class="header">
+                            <span class="type">一对一私教会员次卡</span>
+                            <span class="category">(投资卡)</span>
+                        </div>
+                        <div class="body">
+                            <div class="balance">
+                                <div class="money">&yen; 1000.00</div>
+                                <div class="title">余额</div>
+                            </div>
+                            <div class="buy-date">
+                                <div class="date">2017/05/08</div>
+                                <div class="title">购卡日期</div>
+                            </div>
+                            <div class="dated-date">
+                                <div class="date">2017/11/08</div>
+                                <div class="title">过期日期</div>
+                            </div>
+                            <div class="price">
+                                <div class="money">&yen; 2300.00</div>
+                                <div class="title">卡价格</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </main>
+        <footer id="footer" role="contentinfo">
+        </footer>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/tuobei-customer-back-end.js"></script>
+        <script>
+            $(function () {
+            });
+        </script>
+    </body>
+</html>

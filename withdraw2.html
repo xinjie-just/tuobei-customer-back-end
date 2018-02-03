@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>余额提现 | 拓贝商家后台</title>
+        <title>余额提现 | 拓贝个人投资后台管理系统</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <link rel="stylesheet" href="styles/file-upload.css">
@@ -14,7 +14,7 @@
         <header id="header" role="banner">
             <!-- 首页logo不含 <a> 标签，其他页面含有 -->
             <h1 class="logo">
-                <a href="#" class="logo-link" title="回到首页">拓贝商家后台管理系统</a>
+                <a href="#" class="logo-link" title="回到首页">个人投资后台管理系统</a>
             </h1>
             <nav class="navbar">
                 <ul class="custom-menu">
@@ -32,79 +32,67 @@
             <ul class="sidebar-menu-list" id="sidebarMenuList" data-widget="tree">
                 <li>
                     <a href="" title="基本信息">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-basic-info"></use>
-                        </svg>
+                        <i class="iconfont icon-basic-info"></i>
                         <span>基本信息</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="分店管理">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-subbranch"></use>
-                        </svg>
-                        <span>分店管理</span>
-                    </a>
-                </li>
-                <li>
                     <a href="" title="消费记录">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-record"></use>
-                        </svg>
+                        <i class="iconfont icon-record"></i>
                         <span>消费记录</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="商家卡管理">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-card"></use>
-                        </svg>
-                        <span>商家卡管理</span>
+                    <a href="" title="卡管理">
+                        <i class="iconfont icon-back-card"></i>
+                        <span>卡管理</span>
                     </a>
                 </li>
                 <li>
                     <a href="" title="提现管理" class="active">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-withdraw"></use>
-                        </svg>
+                        <i class="iconfont icon-withdraw"></i>
                         <span>提现管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="会员配置管理">
+                        <i class="iconfont icon-member-deploy"></i>
+                        <span>会员配置管理</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <main id="main" role="main">
-            <div class="content-wrapper">
-                <nav class="withdraw-nav">
-                    <a href="#" class="withdraw-link active" title="余额提现">余额提现</a>
-                    <a href="#" class="withdraw-link" title="银行卡管理">银行卡管理</a>
-                </nav>
-                <form action="" method="" name="withdrawForm" id="withdrawForm" class="withdraw-form">
-                    <div class="card-select">
-                        <label for="cardSelect">银行卡选择</label>
-                        <select name="cardSelect" id="cardSelect">
-                            <option value="0">中国银行 尾号6045</option>
-                            <option value="1">建设银行 尾号6045</option>
-                            <option value="2">工商银行 尾号6045</option>
-                            <option value="3">农业银行 尾号6045</option>
-                        </select>
+            <nav class="withdraw-nav">
+                <a href="#" class="withdraw-link active" title="余额提现">余额提现</a>
+                <a href="#" class="withdraw-link" title="银行卡管理">银行卡管理</a>
+            </nav>
+            <form action="" method="" name="withdrawForm" id="withdrawForm" class="withdraw-form">
+                <div class="card-select">
+                    <label for="cardSelect">银行卡选择</label>
+                    <select name="cardSelect" id="cardSelect">
+                        <option value="0">中国银行 尾号6045</option>
+                        <option value="1">建设银行 尾号6045</option>
+                        <option value="2">工商银行 尾号6045</option>
+                        <option value="3">农业银行 尾号6045</option>
+                    </select>
+                </div>
+                <div class="money">
+                    <label for="myMoney">提现金额</label>
+                    <div class="money-wrapper">
+                        <span class="currency">&yen;</span>
+                        <input type="text" class="my-money" name="myMoney" id="myMoney" placeholder="请输入提现金额">
+                        <button class="all-money" id="allMoney" title="全部提现">全部提现</button>
                     </div>
-                    <div class="money">
-                        <label for="myMoney">提现金额</label>
-                        <div class="money-wrapper">
-                            <span class="currency">&yen;</span>
-                            <input type="text" class="my-money" name="myMoney" id="myMoney" placeholder="请输入提现金额">
-                            <button class="all-money" id="allMoney" title="全部提现">全部提现</button>
-                        </div>
-                    </div>
-                    <div class="tips">
-                        提示：当前余额为<span class="my-value">150.00</span>,每日提现金额不超过<span class="up-line">2000</span>
-                    </div>
-                    <div class="handle">
-                        <button type="reset" class="cancel" id="cancel" title="取消">取消</button>
-                        <button type="submit" class="confirm" id="confirm" title="确认提现">确定</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="tips">
+                    提示：当前余额为<span class="my-value">150.00</span>,每日提现金额不超过<span class="up-line">2000</span>
+                </div>
+                <div class="handle">
+                    <button type="reset" class="cancel" id="cancel" title="取消">取消</button>
+                    <button type="submit" class="confirm" id="confirm" title="确认提现">确定</button>
+                </div>
+            </form>
         </main>
         <footer id="footer" role="contentinfo">
         </footer>

@@ -300,11 +300,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .withdraw-nav::after, .card-management-content .card-list::after, .member-add-form::after, .member-handle-list::after, .member-handle-list .member-condition-list::after, .member-list-table tbody tr td.handle::after, .content-wrapper .withdraw-form > div .money-wrapper::after, .content-wrapper .withdraw-form > div.handle::after, .content-wrapper .subbranch-info::after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list::after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list::after {
+.clearfix::after, #header .navbar::after, .basic-info-form::after, .handle-list::after, .handle-list .condition-list::after, .withdraw-nav::after, .withdraw-form > div .money-wrapper::after, .withdraw-form > div.handle::after, .card-management-content .card-list::after, .member-add-form::after, .member-handle-list::after, .member-handle-list .member-condition-list::after, .member-list-table tbody tr td.handle::after, .member-card-item .body::after, .member-card-details .details::after {
   content: "";
   display: table;
 }
-.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .withdraw-nav:after, .card-management-content .card-list:after, .member-add-form:after, .member-handle-list:after, .member-handle-list .member-condition-list:after, .member-list-table tbody tr td.handle:after, .content-wrapper .withdraw-form > div .money-wrapper:after, .content-wrapper .withdraw-form > div.handle:after, .content-wrapper .subbranch-info:after, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list:after, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list:after {
+.clearfix:after, #header .navbar:after, .basic-info-form:after, .handle-list:after, .handle-list .condition-list:after, .withdraw-nav:after, .withdraw-form > div .money-wrapper:after, .withdraw-form > div.handle:after, .card-management-content .card-list:after, .member-add-form:after, .member-handle-list:after, .member-handle-list .member-condition-list:after, .member-list-table tbody tr td.handle:after, .member-card-item .body:after, .member-card-details .details:after {
   content: "";
   display: table;
   clear: both;
@@ -334,9 +334,7 @@ label:hover {
 }
 
 #header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .card-management-content .add-card-wrapper > div input, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-list-table tr th,
-.member-list-table tr td, .content-wrapper .subbranch-info .form-left > div input, .content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span, .content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span, .content-wrapper .membership-card-form > div input, .content-wrapper .membership-card-info .membership-card-item .name, .content-wrapper .membership-card-info .membership-card-item .type,
-.content-wrapper .membership-card-info .membership-card-item .allotted-time,
-.content-wrapper .membership-card-info .membership-card-item .price, .content-wrapper .membership-card-info .membership-card-item .category {
+.member-list-table tr td, .member-card-details .details > div > span:last-of-type {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -968,7 +966,7 @@ label.error {
   border-color: #ddd;
 }
 
-/*===余额提现===*/
+/*===提现管理===*/
 .withdraw-nav {
   width: 100%;
   height: 40px;
@@ -988,6 +986,7 @@ label.error {
   background-color: #37486b;
 }
 
+/*余额提现*/
 .withdraw-content {
   width: 100%;
   background-color: #fff;
@@ -1028,6 +1027,136 @@ label.error {
   background-color: #4edaad;
 }
 .withdraw-content .withdraw a:focus {
+  background-color: #35d5a2;
+}
+
+.withdraw-form {
+  background-color: #fff;
+  padding: 24px 80px 80px;
+}
+.withdraw-form > div {
+  color: #2b2b2b;
+  font-size: 12px;
+}
+.withdraw-form > div:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.withdraw-form > div label {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+.withdraw-form > div.card-select select {
+  min-width: 240px;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 20px;
+  border: 1px solid #bfbfbf;
+  color: #a7a7a7;
+  font-size: 14px;
+  cursor: pointer;
+}
+.withdraw-form > div.card-select select:focus {
+  border-color: black;
+  outline: none;
+}
+.withdraw-form > div.card-select select option {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #2b2b2b;
+  font-size: 14px;
+  cursor: pointer;
+}
+.withdraw-form > div .money-wrapper {
+  min-width: 340px;
+  width: 42%;
+  height: 60px;
+  line-height: 58px;
+  border: 1px solid #bfbfbf;
+}
+.withdraw-form > div .money-wrapper .currency {
+  float: left;
+  display: block;
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+.withdraw-form > div .money-wrapper .my-money {
+  float: left;
+  display: block;
+  width: calc(100% - 60px - 96px);
+  height: 58px;
+  line-height: 58px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+.withdraw-form > div .money-wrapper .my-money:focus {
+  border: none;
+  outline: none;
+}
+.withdraw-form > div .money-wrapper .all-money {
+  display: block;
+  float: right;
+  width: 96px;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  background-color: transparent;
+  color: #70e1bd;
+  font-size: 14px;
+  cursor: pointer;
+}
+.withdraw-form > div .money-wrapper .all-money:hover {
+  background-color: #efefef;
+}
+.withdraw-form > div .money-wrapper .all-money:focus {
+  background-color: #eaeaea;
+}
+.withdraw-form > div.tips {
+  line-height: 1.6;
+}
+.withdraw-form > div.tips span {
+  color: #ff1616;
+}
+.withdraw-form > div.handle {
+  margin-top: 40px;
+}
+.withdraw-form > div.handle button {
+  float: left;
+  display: block;
+  padding: 10px 38px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #fff;
+}
+.withdraw-form > div.handle button:not(:last-of-type) {
+  margin-right: 40px;
+}
+.withdraw-form > div.handle button.cancel {
+  background-color: #eaeff9;
+}
+.withdraw-form > div.handle button.cancel:hover {
+  background-color: #cad7f0;
+}
+.withdraw-form > div.handle button.cancel:focus {
+  background-color: #b2c5e9;
+}
+.withdraw-form > div.handle button.confirm {
+  background-color: #70e1bd;
+}
+.withdraw-form > div.handle button.confirm:hover {
+  background-color: #4edaad;
+}
+.withdraw-form > div.handle button.confirm:focus {
   background-color: #35d5a2;
 }
 
@@ -1658,671 +1787,144 @@ label.error {
   width: 90px;
 }
 
-/*======*/
-.content-wrapper {
-  /*分店管理*/
-  /*商家卡管理*/
-}
-.content-wrapper .withdraw-form {
-  width: calc(100% - 200px - 20px);
-  float: right;
+/*===会员卡管理===*/
+/*会员卡列表*/
+.member-card-item {
+  position: relative;
+  width: 100%;
+  padding: 10px 20px 15px;
   background-color: #fff;
-  padding: 24px 80px 80px;
+  color: #505050;
 }
-.content-wrapper .withdraw-form > div {
-  color: #2b2b2b;
-  font-size: 12px;
+.member-card-item.dated {
+  background-color: #d9d9d9;
 }
-.content-wrapper .withdraw-form > div:not(:last-of-type) {
-  margin-bottom: 10px;
+.member-card-item.dated::after {
+  content: "已经到期";
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 76px;
+  height: 76px;
+  text-align: center;
+  padding: 11px 9px 11px 13px;
+  line-height: 24px;
+  border: 3px solid;
+  border-radius: 50%;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  transform: translateY(-50%) rotate(-30deg);
 }
-.content-wrapper .withdraw-form > div label {
-  display: block;
+.member-card-item.dated .body > div {
+  border-left-color: #505050;
+}
+.member-card-item.dated .body > div > div:last-of-type {
+  color: #505050;
+}
+.member-card-item .header {
+  font-size: 14px;
+  color: #505050;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.member-card-item .body {
+  width: 100%;
+}
+.member-card-item .body > div {
+  width: 25%;
+  float: left;
+  border-left: 2px solid;
+  padding-left: 10px;
+}
+.member-card-item .body > div > div:first-of-type {
+  font-size: 18px;
+  color: #505050;
+}
+.member-card-item .body > div > div:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.member-card-item .body > div > div:last-of-type {
+  font-size: 14px;
+  color: #b6bcc3;
+}
+.member-card-item .body .balance {
+  border-left-color: #70b340;
+}
+.member-card-item .body .buy-date {
+  border-left-color: #5974c8;
+}
+.member-card-item .body .dated-date {
+  border-left-color: #f79e2b;
+}
+.member-card-item .body .price {
+  border-left-color: #ef3a00;
+}
+
+/*会员卡详情*/
+.member-card-details {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  padding: 30px 40px;
+  background-color: #fff;
+}
+.member-card-details .back {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #333;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  cursor: pointer;
+  transform: rotate(-45deg);
+}
+.member-card-details .details > div {
+  float: left;
+  font-size: 0;
+  width: 50%;
   height: 36px;
   line-height: 36px;
-  font-size: 14px;
-  color: #2b2b2b;
-}
-.content-wrapper .withdraw-form > div.card-select select {
-  min-width: 240px;
-  height: 36px;
-  line-height: 36px;
-  padding-left: 20px;
-  border: 1px solid #bfbfbf;
-  color: #a7a7a7;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .withdraw-form > div.card-select select:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .withdraw-form > div.card-select select option {
-  height: 30px;
-  line-height: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: #2b2b2b;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .withdraw-form > div .money-wrapper {
-  min-width: 340px;
-  width: 42%;
-  height: 60px;
-  line-height: 58px;
-  border: 1px solid #bfbfbf;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .currency {
-  float: left;
-  display: block;
-  width: 58px;
-  height: 58px;
-  line-height: 58px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #2b2b2b;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .my-money {
-  float: left;
-  display: block;
-  width: calc(100% - 60px - 96px);
-  height: 58px;
-  line-height: 58px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #2b2b2b;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .my-money:focus {
-  border: none;
-  outline: none;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .all-money {
-  display: block;
-  float: right;
-  width: 96px;
-  height: 58px;
-  line-height: 58px;
-  text-align: center;
-  background-color: transparent;
-  color: #70e1bd;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .all-money:hover {
-  background-color: #efefef;
-}
-.content-wrapper .withdraw-form > div .money-wrapper .all-money:focus {
-  background-color: #eaeaea;
-}
-.content-wrapper .withdraw-form > div.tips {
-  line-height: 1.6;
-}
-.content-wrapper .withdraw-form > div.tips span {
-  color: #ff1616;
-}
-.content-wrapper .withdraw-form > div.handle {
-  margin-top: 40px;
-}
-.content-wrapper .withdraw-form > div.handle button {
-  float: left;
-  display: block;
-  padding: 10px 38px;
-  border-radius: 40px;
-  font-size: 14px;
-  color: #fff;
-}
-.content-wrapper .withdraw-form > div.handle button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .withdraw-form > div.handle button.cancel {
-  background-color: #eaeff9;
-}
-.content-wrapper .withdraw-form > div.handle button.cancel:hover {
-  background-color: #cad7f0;
-}
-.content-wrapper .withdraw-form > div.handle button.cancel:focus {
-  background-color: #b2c5e9;
-}
-.content-wrapper .withdraw-form > div.handle button.confirm {
-  background-color: #70e1bd;
-}
-.content-wrapper .withdraw-form > div.handle button.confirm:hover {
-  background-color: #4edaad;
-}
-.content-wrapper .withdraw-form > div.handle button.confirm:focus {
-  background-color: #35d5a2;
-}
-.content-wrapper .subbranch-nav {
-  width: 200px;
-  float: left;
-  background-color: #fff;
-}
-.content-wrapper .subbranch-nav ul li {
-  border-bottom: #eaeff9;
-}
-.content-wrapper .subbranch-nav ul li a {
-  display: block;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #2b2b2b;
-  font-size: 14px;
-}
-.content-wrapper .subbranch-nav ul li a.active, .content-wrapper .subbranch-nav ul li a:hover {
-  background-color: #5974c8;
-  color: #fff;
-}
-.content-wrapper .subbranch-nav .subbranch-add {
-  display: block;
-  margin: 230px auto 20px;
-  width: calc(200px - 40px);
-  height: 30px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #70e1bd;
-}
-.content-wrapper .subbranch-info {
-  width: calc(100% - 200px - 20px);
-  float: right;
-  background-color: #fff;
-  padding: 30px 20px 90px 40px;
-}
-.content-wrapper .subbranch-info .form-left {
-  width: 66%;
-  min-width: 622px;
-  float: left;
-}
-.content-wrapper .subbranch-info .form-left > div {
-  width: 100%;
   margin-bottom: 20px;
-  font-size: 0;
 }
-.content-wrapper .subbranch-info .form-left > div label:not(.error) {
+@media (max-width: 1280px) {
+  .member-card-details .details > div {
+    width: 100%;
+  }
+}
+.member-card-details .details > div.intro {
+  width: 100%;
+  height: auto;
+}
+.member-card-details .details > div.intro > span:last-of-type {
+  height: 130px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  white-space: normal;
+}
+.member-card-details .details > div > span {
+  height: 36px;
+  line-height: 36px;
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
-  width: 114px;
-  height: 34px;
-  line-height: 34px;
-  position: relative;
-  padding-right: 18px;
-  text-align: right;
   color: #505050;
 }
-.content-wrapper .subbranch-info .form-left > div label:not(.error).required::after {
-  content: "*";
-  position: absolute;
-  right: 8px;
-  font-size: 14px;
-  color: #f00;
-}
-.content-wrapper .subbranch-info .form-left > div label.error {
-  display: block;
-  font-size: 12px;
-  height: 24px;
-  line-height: 24px;
-  margin-left: 114px;
-}
-.content-wrapper .subbranch-info .form-left > div input {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: calc(100% - 114px);
-  width: 44%;
-  height: 34px;
-  line-height: 32px;
-  border: 1px solid #bfbfbf;
-  font-size: 14px;
-  color: #a7a7a7;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-radius: 2px;
-}
-.content-wrapper .subbranch-info .form-left > div input:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .subbranch-info .form-left > div.qr-code select, .content-wrapper .subbranch-info .form-left > div.withdraw-entitle select {
-  display: inline-block;
-  vertical-align: middle;
-  width: 44%;
-  max-width: calc(100% - 114px);
-  height: 34px;
-  line-height: 32px;
-  padding-left: 20px;
-  border: 1px solid #bfbfbf;
-  color: #a7a7a7;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .subbranch-info .form-left > div.qr-code select:focus, .content-wrapper .subbranch-info .form-left > div.withdraw-entitle select:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .subbranch-info .form-left > div.qr-code select option, .content-wrapper .subbranch-info .form-left > div.withdraw-entitle select option {
-  height: 30px;
-  line-height: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: #2b2b2b;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .subbranch-info .form-left > div.subbranch-intro textarea {
-  display: inline-block;
-  vertical-align: middle;
-  min-width: calc(100% - 114px);
-  width: calc(100% - 114px);
-  max-width: calc(100% - 114px);
-  min-height: 100px;
-  height: 150px;
-  max-height: 150px;
-  line-height: 22px;
-  border: 1px solid #bfbfbf;
-  font-size: 14px;
-  color: #a7a7a7;
-  padding: 6px 20px;
-  border-radius: 2px;
-  resize: vertical;
-}
-.content-wrapper .subbranch-info .form-left > div.subbranch-intro textarea:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .subbranch-info .form-left > div.cancel-confirm {
-  margin-left: 114px;
-  margin-top: 50px;
-  font-size: 0;
-}
-.content-wrapper .subbranch-info .form-left > div.cancel-confirm button {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
-  color: #fff;
-  min-width: 100px;
-  height: 40px;
-  line-height: 40px;
-  padding-right: 32px;
-  padding-left: 32px;
-  text-align: center;
-  border-radius: 40px;
-}
-.content-wrapper .subbranch-info .form-left > div.cancel-confirm button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .subbranch-info .form-left > div.cancel-confirm .cancel {
-  background-color: #eaeff9;
-}
-.content-wrapper .subbranch-info .form-left > div.cancel-confirm .confirm {
-  background-color: #70e1bd;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload {
-  z-index: 99;
-  display: inline-block;
-  vertical-align: middle;
-  width: calc(100% - 114px);
-  position: relative;
-  height: 210px;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .tips {
-  position: absolute;
-  bottom: 0;
-  left: 180px;
-  font-size: 12px;
-  height: 24px;
-  line-height: 24px;
-  color: #a7a7a7;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li {
-  float: left;
-  width: 100px;
-  height: 100px;
-  background-color: #eaeff9;
-  padding: 26px 10px 0;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 2px;
-  margin: 9px;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li .icon {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 32px;
-  color: #fff;
-}
-.content-wrapper .subbranch-info .form-left > div .subbranch-picture-file-upload .placeholder-img-list li span {
-  font-size: 12px;
-  color: #fff;
-}
-.content-wrapper .subbranch-info .form-left > div .logo-file-upload {
-  z-index: 99;
-  width: 120px;
-  position: relative;
-  height: 210px;
-}
-.content-wrapper .subbranch-info .form-left > div .logo-file-upload .tips {
-  position: absolute;
-  bottom: 0;
-  left: 180px;
-  font-size: 12px;
-  height: 24px;
-  line-height: 24px;
-  color: #a7a7a7;
-}
-.content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li {
-  float: left;
-  width: 100px;
-  height: 100px;
-  background-color: #eaeff9;
-  padding: 26px 10px 0;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 2px;
-  margin: 9px;
-}
-.content-wrapper .subbranch-info .form-left > div .logo-file-upload .placeholder-img-list li span {
-  font-size: 16px;
-  color: #fff;
-}
-.content-wrapper .subbranch-info .logo-img {
-  float: right;
-  width: 120px;
-}
-.content-wrapper .membership-card-nav {
-  width: 200px;
-  float: left;
-  background-color: #fff;
-}
-.content-wrapper .membership-card-nav a {
-  display: block;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #2b2b2b;
-  font-size: 14px;
-}
-.content-wrapper .membership-card-nav a.active, .content-wrapper .membership-card-nav a:hover {
-  background-color: #5974c8;
-  color: #fff;
-}
-.content-wrapper .membership-card-form {
-  width: calc(100% - 200px - 20px);
-  float: right;
-  background-color: #fff;
-  padding: 30px 130px;
-}
-.content-wrapper .membership-card-form > div {
-  float: left;
-  width: calc(50% - 60px / 2);
-  min-width: 240px;
-  margin-bottom: 18px;
-}
-.content-wrapper .membership-card-form > div:nth-of-type(2n + 1) {
-  margin-right: 60px;
-}
-.content-wrapper .membership-card-form > div label:not(.error) {
-  display: block;
-  font-size: 14px;
-  width: 100%;
-  height: 32px;
-  line-height: 32px;
-  position: relative;
-  color: #505050;
-}
-.content-wrapper .membership-card-form > div label:not(.error).required::before {
-  content: "*";
-  position: absolute;
-  left: -8px;
-  font-size: 14px;
-  color: #f00;
-}
-.content-wrapper .membership-card-form > div label.error {
-  width: 100%;
-  display: block;
-  font-size: 12px;
-  height: 18px;
-  line-height: 18px;
-}
-.content-wrapper .membership-card-form > div input {
-  width: 100%;
-  display: block;
-  height: 34px;
-  line-height: 32px;
-  border: 1px solid #bfbfbf;
-  font-size: 14px;
-  color: #a7a7a7;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-radius: 2px;
-}
-.content-wrapper .membership-card-form > div input:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .membership-card-form > div select {
-  width: 100%;
-  height: 34px;
-  line-height: 32px;
-  padding-left: 20px;
-  border: 1px solid #bfbfbf;
-  color: #a7a7a7;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .membership-card-form > div select:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .membership-card-form > div select option {
-  height: 30px;
-  line-height: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: #2b2b2b;
-  font-size: 14px;
-  cursor: pointer;
-}
-.content-wrapper .membership-card-form > div.service-area-intro {
-  width: 100%;
-}
-.content-wrapper .membership-card-form > div.service-area-intro textarea {
-  display: block;
-  min-width: 100%;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100px;
-  height: 150px;
-  max-height: 150px;
-  line-height: 20px;
-  border: 1px solid #bfbfbf;
-  font-size: 14px;
-  color: #a7a7a7;
-  padding: 6px 20px;
-  border-radius: 2px;
-}
-.content-wrapper .membership-card-form > div.service-area-intro textarea:focus {
-  border-color: black;
-  outline: none;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm {
-  margin-top: 50px;
-  font-size: 0;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm button {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
-  color: #fff;
-  padding: 10px 32px;
-  text-align: center;
-  border-radius: 40px;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm button:not(:last-of-type) {
-  margin-right: 40px;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .cancel {
-  background-color: #eaeff9;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .cancel:hover {
-  background-color: #cad7f0;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .cancel:focus {
-  background-color: #b2c5e9;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .confirm {
-  background-color: #70e1bd;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .confirm:hover {
-  background-color: #4edaad;
-}
-.content-wrapper .membership-card-form > div.cancel-confirm .confirm:focus {
-  background-color: #35d5a2;
-}
-.content-wrapper .membership-card-info {
-  width: calc(100% - 200px - 20px);
-  float: right;
-  background-color: #fff;
-  padding: 5px 5px 110px;
-}
-.content-wrapper .membership-card-info .membership-card-category {
-  width: 100%;
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-  color: #2b2b2b;
-  font-size: 14px;
-  font-weight: normal;
-}
-.content-wrapper .membership-card-info .membership-card-category span {
-  display: inline-block;
-  position: relative;
-}
-.content-wrapper .membership-card-info .membership-card-category span::before, .content-wrapper .membership-card-info .membership-card-category span::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50);
-  color: inherit;
-  background-color: currentColor;
-  width: 30px;
-  height: 1px;
-}
-.content-wrapper .membership-card-info .membership-card-category span::before {
-  left: -45px;
-}
-.content-wrapper .membership-card-info .membership-card-category span::after {
-  right: -45px;
-}
-.content-wrapper .membership-card-info .membership-card-item {
-  position: relative;
-  float: left;
-  width: 240px;
-  height: 150px;
-  padding-left: 16px;
-  margin: 15px;
-  background-color: #ebeff9;
-  border-radius: 4px;
-  color: #2b2b2b;
-  font-size: 12px;
-}
-.content-wrapper .membership-card-info .membership-card-item .name {
-  width: calc(100% - 40px);
-  height: 40px;
-  line-height: 40px;
-  margin-bottom: 4px;
-  font-size: 16px;
-  font-weight: normal;
-}
-.content-wrapper .membership-card-info .membership-card-item .type,
-.content-wrapper .membership-card-info .membership-card-item .allotted-time,
-.content-wrapper .membership-card-info .membership-card-item .price {
-  width: calc(100% - 16px);
-  height: 22px;
-  line-height: 22px;
-  font-size: 12px;
-}
-.content-wrapper .membership-card-info .membership-card-item .category {
-  position: absolute;
-  right: 0;
-  bottom: 5px;
-  width: calc(100% - 16px);
+.member-card-details .details > div > span:first-of-type {
+  width: 160px;
   text-align: right;
-  height: 24px;
-  line-height: 24px;
-  padding-right: calc(16px / 2);
-  font-size: 12px;
+  margin-right: 20px;
 }
-.content-wrapper .membership-card-info .membership-card-item .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  border: 4px;
-}
-.content-wrapper .membership-card-info .membership-card-item .close:hover {
-  color: #eee;
-}
-.content-wrapper .membership-card-info .membership-card-item .close::before, .content-wrapper .membership-card-info .membership-card-item .close::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 3px;
-  color: #fff;
-  background-color: currentColor;
-  border-radius: 3px;
-  transform-origin: center;
-}
-.content-wrapper .membership-card-info .membership-card-item .close::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.content-wrapper .membership-card-info .membership-card-item .close::after {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.content-wrapper .membership-card-info .membership-card-add-btn {
-  position: relative;
-  float: left;
-  width: 240px;
-  height: 150px;
-  margin: 15px;
-  border: 2px dashed #bfbfbf;
+.member-card-details .details > div > span:last-of-type {
+  width: calc(100% - 160px - 20px);
+  background-color: #eaeff9;
   border-radius: 4px;
-}
-.content-wrapper .membership-card-info .membership-card-add-btn::before, .content-wrapper .membership-card-info .membership-card-add-btn::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 5px;
-  background-color: #ebeff9;
-  border-radius: 3px;
-}
-.content-wrapper .membership-card-info .membership-card-add-btn::before {
-  transform: translate(-50%, -50%);
-}
-.content-wrapper .membership-card-info .membership-card-add-btn::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-  transform-origin: center;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 /*# sourceMappingURL=tuobei-customer-back-end.css.map */

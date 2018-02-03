@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>银行卡管理 | 拓贝商家后台</title>
+        <title>会员卡详情 | 拓贝个人投资后台管理系统</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <link rel="stylesheet" href="styles/file-upload.css">
@@ -14,7 +14,7 @@
         <header id="header" role="banner">
             <!-- 首页logo不含 <a> 标签，其他页面含有 -->
             <h1 class="logo">
-                <a href="#" class="logo-link" title="回到首页">拓贝商家后台管理系统</a>
+                <a href="#" class="logo-link" title="回到首页">个人投资后台管理系统</a>
             </h1>
             <nav class="navbar">
                 <ul class="custom-menu">
@@ -43,13 +43,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="卡管理" class="active">
+                    <a href="" title="卡管理">
                         <i class="iconfont icon-back-card"></i>
                         <span>卡管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="" title="提现管理">
+                    <a href="" title="提现管理" class="active">
                         <i class="iconfont icon-withdraw"></i>
                         <span>提现管理</span>
                     </a>
@@ -63,69 +63,70 @@
             </ul>
         </aside>
         <main id="main" role="main">
-            <nav class="withdraw-nav">
-                <a href="#" class="withdraw-link" title="余额提现">余额提现</a>
-                <a href="#" class="withdraw-link active" title="银行卡管理">银行卡管理</a>
-            </nav>
-            <div class="withdraw-content card-management-content">
-                <ul class="card-list" id="cardList">
-                    <!-- 建设银行 ccb，交通银行 bocom，工商银行 icbc，中国银行 boc，农业银行 abc -->
-                    <li class="card-item icbc" title="选中删除">
-                        <i class="iconfont icon-icbc"></i>
-                        <div class="bank-name">中国工商银行</div>
-                        <div class="card-type">储蓄卡</div>
-                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                    </li>
-                    <li class="card-item ccb" title="选中删除">
-                        <i class="iconfont icon-ccb"></i>
-                        <div class="bank-name">中国建设银行</div>
-                        <div class="card-type">储蓄卡</div>
-                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                    </li>
-                    <li class="card-item abc" title="选中删除">
-                        <i class="iconfont icon-abc"></i>
-                        <div class="bank-name">中国农业银行</div>
-                        <div class="card-type">储蓄卡</div>
-                        <div class="card-number">**** **** **** <span class="card-tail-number">6265</span></div>
-                    </li>
-                    <button type="button" id="addCardBtn" class="add-card-btn" title="新添加银行卡">新添加银行卡</button>
-                </ul>
-                <button class="remove-btn default" id="removeBtn" type="button" title="不可用(请选中银行卡)">删除</button>
-                <div class="remove-card-wrapper default" id="removeCardWrapper">
-                    <div class="tips">确认删除</div>
-                    <div class="remove-card-handle">
-                        <button type="button" title="取消" id="cancelRemove" class="cancel-remove">取消</button>
-                        <button type="button" title="确认删除" id="confirmRemove" class="confirm-remove">确定</button>
+            <div class="member-card-details">
+                <div class="back" id="jsBack" title="返回"></div>
+                <div class="details">
+                    <div class="name">
+                        <span>卡名称</span>
+                        <span>一对一私教次卡</span>
+                    </div>
+                    <div class="dated-status">
+                        <span>到期状态</span>
+                        <span>未到期</span>
+                    </div>
+                    <div class="category">
+                        <span>卡种类</span>
+                        <span>投资卡</span>
+                    </div>
+                    <div class="renew-status">
+                        <span>续费状态</span>
+                        <span>已续费</span>
+                    </div>
+                    <div class="buy-date">
+                        <span>购买日期</span>
+                        <span>2017-05-06 15:59:59</span>
+                    </div>
+                    <div class="renew-times">
+                        <span>续费次数</span>
+                        <span>2次</span>
+                    </div>
+                    <div class="dated-date">
+                        <span>过期日期</span>
+                        <span>2019-05-06 15:59:59</span>
+                    </div>
+                    <div class="renew-record">
+                        <span>续费记录</span>
+                        <span>2017/10/01 续费1500元</span>
+                    </div>
+                    <div class="balance">
+                        <span>卡余额</span>
+                        <span>1000.00</span>
+                    </div>
+                    <div class="assure">
+                        <span>是否通过平台保证</span>
+                        <span>是</span>
+                    </div>
+                    <div class="price">
+                        <span>卡价格</span>
+                        <span>2300.00</span>
+                    </div>
+                    <div class="limit-oneself">
+                        <span>是否仅限本人使用</span>
+                        <span>否</span>
+                    </div>
+                    <div class="use-deadline">
+                        <span>使用期限</span>
+                        <span>24月</span>
+                    </div>
+                    <div class="intro">
+                        <span>商家介绍</span>
+                        <span>描述商家经营范围，商品服务等信息</span>
                     </div>
                 </div>
-                <form action="" method="" id="addCardWrapper" class="add-card-wrapper default">
-                    <div class="card-holder">
-                        <label for="cardHolder" class="required">持卡人</label>
-                        <input type="text" id="cardHolder" name="cardHolder" placeholder="请输入持卡人姓名">
-                    </div>
-                    <div class="card-number">
-                        <label for="cardNumber" class="required">银行卡号</label>
-                        <input type="text" id="cardNumber" name="cardNumber" placeholder="请输入银行卡号">
-                    </div>
-                    <div class="card-holder-phone">
-                        <label for="cardHolderPhone" class="required">手机号码</label>
-                        <input type="text" id="cardHolderPhone" name="cardHolderPhone" placeholder="请输入银行预留手机号码">
-                    </div>
-                    <div class="verification-code">
-                        <label for="verificationCode" class="required">验证码</label>
-                        <input type="text" id="verificationCode" name="verificationCode" placeholder="请输入验证码">
-                        <button type="button" title="获取验证码" id="getVerificationCode" class="get-verification-code-btn">获取验证码</button>
-                    </div>
-                    <div class="add-card-handle">
-                        <button type="button" title="取消" id="addCardCancel" class="cancel">取消</button>
-                        <button type="button" title="确认删除" id="addCardConfirm" class="confirm">确定</button>
-                    </div>
-                </form>
             </div>
         </main>
         <footer id="footer" role="contentinfo">
         </footer>
-        <script src="//at.alicdn.com/t/font_549063_cphlwrd7bas2lnmi.js"></script>
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/tuobei-customer-back-end.js"></script>
         <script>

@@ -575,7 +575,7 @@
   }
 }
 
-/*===余额提现===*/
+/*===提现管理===*/
 .withdraw-nav {
   $height: 40px;
   width: 100%;
@@ -597,6 +597,7 @@
     }
   }
 }
+/*余额提现*/
 .withdraw-content {
   width: 100%;
   background-color: #fff;
@@ -635,6 +636,140 @@
       }
       &:focus {
         background-color: darken($btn-bg-color, 14%);
+      }
+    }
+  }
+}
+.withdraw-form {
+  background-color: #fff;
+  padding: 24px 80px 80px;
+  > div {
+    color: $text-info-color;
+    font-size: 12px;
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      height: 36px;
+      line-height: 36px;
+      font-size: $font-size;
+      color: $text-info-color;
+    }
+    &.card-select {
+      select {
+        min-width: 240px;
+        height: 36px;
+        line-height: 36px;
+        padding-left: 20px;
+        border: 1px solid #bfbfbf;
+        color: #a7a7a7;
+        font-size: $font-size;
+        cursor: pointer;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+        option {
+          height: 30px;
+          line-height: 30px;
+          padding-right: 20px;
+          padding-left: 20px;
+          color: $text-info-color;
+          font-size: $font-size;
+          cursor: pointer;
+        }
+      }
+    }
+    .money-wrapper {
+      $withdraw-money-height: 60px;
+      min-width: 340px;
+      width: 42%;
+      height: $withdraw-money-height;
+      line-height: $withdraw-money-height - 2;
+      border: 1px solid #bfbfbf;
+      @extend .clearfix;
+      .currency {
+        float: left;
+        display: block;
+        width: $withdraw-money-height - 2;
+        height: $withdraw-money-height - 2;
+        line-height: $withdraw-money-height - 2;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: $text-info-color;
+      }
+      .my-money {
+        float: left;
+        display: block;
+        width: calc(100% - #{$withdraw-money-height} - 96px);
+        height: $withdraw-money-height - 2;
+        line-height: $withdraw-money-height - 2;
+        font-size: $font-size + 2;
+        font-weight: 500;
+        color: $text-info-color;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+      .all-money {
+        display: block;
+        float: right;
+        width: 96px;
+        height: $withdraw-money-height - 2;
+        line-height: $withdraw-money-height - 2;
+        text-align: center;
+        background-color: transparent;
+        color: $btn-bg-color;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+          background-color: #efefef;
+        }
+        &:focus {
+          background-color: #eaeaea;
+        }
+      }
+    }
+    &.tips {
+      line-height: 1.6;
+      span {
+        color: #ff1616;
+      }
+    }
+    &.handle {
+      margin-top: 40px;
+      @extend .clearfix;
+      button {
+        float: left;
+        display: block;
+        padding: 10px 38px;
+        border-radius: 40px;
+        font-size: $font-size;
+        color: #fff;
+        &:not(:last-of-type) {
+          margin-right: 40px;
+        }
+        &.cancel {
+          background-color: #eaeff9;
+          &:hover {
+            background-color: darken(#eaeff9, 8%);
+          }
+          &:focus {
+            background-color: darken(#eaeff9, 14%);
+          }
+        }
+        &.confirm {
+          background-color: $btn-bg-color;
+          &:hover {
+            background-color: darken($btn-bg-color, 8%);
+          }
+          &:focus {
+            background-color: darken($btn-bg-color, 14%);
+          }
+        }
       }
     }
   }
@@ -1297,717 +1432,151 @@
   }
 }
 
-/*======*/
-.content-wrapper {
-  $width: 200px;
-  $height: 40px;
-
-  .withdraw-form {
-    width: calc(100% - #{$width} - 20px);
-    float: right;
-    background-color: #fff;
-    padding: 24px 80px 80px;
-    > div {
-      color: $text-info-color;
-      font-size: 12px;
-      &:not(:last-of-type) {
-        margin-bottom: 10px;
-      }
-      label {
-        display: block;
-        height: 36px;
-        line-height: 36px;
-        font-size: $font-size;
-        color: $text-info-color;
-      }
-      &.card-select {
-        select {
-          min-width: 240px;
-          height: 36px;
-          line-height: 36px;
-          padding-left: 20px;
-          border: 1px solid #bfbfbf;
-          color: #a7a7a7;
-          font-size: $font-size;
-          cursor: pointer;
-          &:focus {
-            border-color: darken(#bfbfbf, 80%);
-            outline: none;
-          }
-          option {
-            height: 30px;
-            line-height: 30px;
-            padding-right: 20px;
-            padding-left: 20px;
-            color: $text-info-color;
-            font-size: $font-size;
-            cursor: pointer;
-          }
-        }
-      }
-      .money-wrapper {
-        $withdraw-money-height: 60px;
-        min-width: 340px;
-        width: 42%;
-        height: $withdraw-money-height;
-        line-height: $withdraw-money-height - 2;
-        border: 1px solid #bfbfbf;
-        @extend .clearfix;
-        .currency {
-          float: left;
-          display: block;
-          width: $withdraw-money-height - 2;
-          height: $withdraw-money-height - 2;
-          line-height: $withdraw-money-height - 2;
-          text-align: center;
-          font-size: 30px;
-          font-weight: bold;
-          color: $text-info-color;
-        }
-        .my-money {
-          float: left;
-          display: block;
-          width: calc(100% - #{$withdraw-money-height} - 96px);
-          height: $withdraw-money-height - 2;
-          line-height: $withdraw-money-height - 2;
-          font-size: $font-size + 2;
-          font-weight: 500;
-          color: $text-info-color;
-          &:focus {
-            border: none;
-            outline: none;
-          }
-        }
-        .all-money {
-          display: block;
-          float: right;
-          width: 96px;
-          height: $withdraw-money-height - 2;
-          line-height: $withdraw-money-height - 2;
-          text-align: center;
-          background-color: transparent;
-          color: $btn-bg-color;
-          font-size: 14px;
-          cursor: pointer;
-          &:hover {
-            background-color: #efefef;
-          }
-          &:focus {
-            background-color: #eaeaea;
-          }
-        }
-      }
-      &.tips {
-        line-height: 1.6;
-        span {
-          color: #ff1616;
-        }
-      }
-      &.handle {
-        margin-top: 40px;
-        @extend .clearfix;
-        button {
-          float: left;
-          display: block;
-          padding: 10px 38px;
-          border-radius: 40px;
-          font-size: $font-size;
-          color: #fff;
-          &:not(:last-of-type) {
-            margin-right: 40px;
-          }
-          &.cancel {
-            background-color: #eaeff9;
-            &:hover {
-              background-color: darken(#eaeff9, 8%);
-            }
-            &:focus {
-              background-color: darken(#eaeff9, 14%);
-            }
-          }
-          &.confirm {
-            background-color: $btn-bg-color;
-            &:hover {
-              background-color: darken($btn-bg-color, 8%);
-            }
-            &:focus {
-              background-color: darken($btn-bg-color, 14%);
-            }
-          }
-        }
-      }
+/*===会员卡管理===*/
+/*会员卡列表*/
+.member-card-item {
+  position: relative;
+  width: 100%;
+  padding: 10px 20px 15px;
+  background-color: #fff;
+  color: $text-color;
+  &.dated {
+    background-color: #d9d9d9;
+    &::after {
+      content: "已经到期";
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      width: 76px;
+      height: 76px;
+      text-align: center;
+      padding: 11px 9px 11px 13px;
+      line-height: 24px;
+      border: 3px solid;
+      border-radius: 50%;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      transform: translateY(-50%) rotate(-30deg);
     }
-  }
-
-
-  /*分店管理*/
-  .subbranch-nav {
-    width: $width;
-    float: left;
-    background-color: #fff;
-    ul {
-      li {
-        border-bottom: #eaeff9;
-        a {
-          display: block;
-          width: 100%;
-          height: 40px;
-          line-height: 40px;
-          text-align: center;
-          color: $text-info-color;
-          font-size: $font-size;
-          &.active,
-          &:hover {
-            background-color: $main-color;
-            color: #fff;
-          }
-        }
-      }
-    }
-    .subbranch-add {
-      display: block;
-      margin: 230px auto 20px;
-      width: calc(#{$width} - 40px);
-      height: 30px;
-      font-size: $font-size;
-      color: #fff;
-      background-color: $btn-bg-color;
-    }
-  }
-  .subbranch-info {
-    width: calc(100% - #{$width} - 20px);
-    float: right;
-    background-color: #fff;
-    padding: 30px 20px 90px 40px;
-    @extend .clearfix;
-    .form-left {
-      $subbranch-form-label-width: 114px;
-      $subbranch-form-label-height: 34px;
-      width: 66%;
-      min-width: 622px;
-      float: left;
+    .body {
       > div {
-        width: 100%;
-        margin-bottom: 20px;
-        font-size: 0;
-        label:not(.error) {
-          display: inline-block;
-          vertical-align: middle;
-          font-size: $font-size;
-          width: $subbranch-form-label-width;
-          height: $subbranch-form-label-height;
-          line-height: $subbranch-form-label-height;
-          position: relative;
-          padding-right: 18px;
-          text-align: right;
+        border-left-color: $text-color;
+        > div:last-of-type {
           color: $text-color;
-          &.required {
-            &::after {
-              content: "*";
-              position: absolute;
-              right: 8px;
-              font-size: $font-size;
-              color: #f00;
-            }
-          }
-        }
-        label.error {
-          display: block;
-          font-size: 12px;
-          height: 24px;
-          line-height: 24px;
-          margin-left: $subbranch-form-label-width;
-
-        }
-        input {
-          display: inline-block;
-          vertical-align: middle;
-          max-width: calc(100% - #{$subbranch-form-label-width});
-          width: 44%;
-          height: $subbranch-form-label-height;
-          line-height: $subbranch-form-label-height - 2;
-          border: 1px solid #bfbfbf;
-          font-size: $font-size;
-          color: #a7a7a7;
-          padding-right: 20px;
-          padding-left: 20px;
-          border-radius: 2px;
-          @extend %ellipsis;
-          &:focus {
-            border-color: darken(#bfbfbf, 80%);
-            outline: none;
-          }
-        }
-        &.qr-code,
-        &.withdraw-entitle {
-          select {
-            display: inline-block;
-            vertical-align: middle;
-            width: 44%;
-            max-width: calc(100% - #{$subbranch-form-label-width});
-            height: $subbranch-form-label-height;
-            line-height: $subbranch-form-label-height - 2;
-            padding-left: 20px;
-            border: 1px solid #bfbfbf;
-            color: #a7a7a7;
-            font-size: $font-size;
-            cursor: pointer;
-            &:focus {
-              border-color: darken(#bfbfbf, 80%);
-              outline: none;
-            }
-            option {
-              height: 30px;
-              line-height: 30px;
-              padding-right: 20px;
-              padding-left: 20px;
-              color: $text-info-color;
-              font-size: $font-size;
-              cursor: pointer;
-            }
-          }
-        }
-        &.subbranch-intro {
-          textarea {
-            display: inline-block;
-            vertical-align: middle;
-            min-width: calc(100% - #{$subbranch-form-label-width});
-            width: calc(100% - #{$subbranch-form-label-width});
-            max-width: calc(100% - #{$subbranch-form-label-width});
-            min-height: 100px;
-            height: 150px;
-            max-height: 150px;
-            line-height: $subbranch-form-label-height - 12;
-            border: 1px solid #bfbfbf;
-            font-size: $font-size;
-            color: #a7a7a7;
-            padding: 6px 20px;
-            border-radius: 2px;
-            resize: vertical;
-            &:focus {
-              border-color: darken(#bfbfbf, 80%);
-              outline: none;
-            }
-          }
-        }
-        &.cancel-confirm {
-          margin-left: $subbranch-form-label-width;
-          margin-top: 50px;
-          font-size: 0;
-          button {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: $font-size;
-            color: #fff;
-            min-width: 100px;
-            height: 40px;
-            line-height: 40px;
-            padding-right: 32px;
-            padding-left: 32px;
-            text-align: center;
-            border-radius: 40px;
-            &:not(:last-of-type) {
-              margin-right: 40px;
-            }
-          }
-          .cancel {
-            background-color: #eaeff9;
-          }
-          .confirm {
-            background-color: $btn-bg-color;
-          }
-        }
-        .subbranch-picture-file-upload {
-          z-index: 99;
-          display: inline-block;
-          vertical-align: middle;
-          width: calc(100% - #{$subbranch-form-label-width});
-          position: relative;
-          height: 210px;
-          .tips {
-            position: absolute;
-            bottom: 0;
-            left: 180px;
-            font-size: 12px;
-            height: 24px;
-            line-height: 24px;
-            color: #a7a7a7;
-          }
-          .placeholder-img-list {
-            z-index: 99;
-            position: absolute;
-            top: 0;
-            left: 0;
-            @extend .clearfix;
-            li {
-              float: left;
-              width: 100px;
-              height: 100px;
-              background-color: #eaeff9;
-              padding: 26px 10px 0;
-              overflow: hidden;
-              text-align: center;
-              border-radius: 2px;
-              margin: 9px;
-              .icon {
-                display: block;
-                margin-right: auto;
-                margin-left: auto;
-                font-size: 32px;
-                color: #fff;
-              }
-              span {
-                font-size: 12px;
-                color: #fff;
-                @extend %ellipsis;
-              }
-            }
-          }
-        }
-        .logo-file-upload {
-          z-index: 99;
-          width: 120px;
-          position: relative;
-          height: 210px;
-          .tips {
-            position: absolute;
-            bottom: 0;
-            left: 180px;
-            font-size: 12px;
-            height: 24px;
-            line-height: 24px;
-            color: #a7a7a7;
-          }
-          .placeholder-img-list {
-            z-index: 99;
-            position: absolute;
-            top: 0;
-            left: 0;
-            @extend .clearfix;
-            li {
-              float: left;
-              width: 100px;
-              height: 100px;
-              background-color: #eaeff9;
-              padding: 26px 10px 0;
-              overflow: hidden;
-              text-align: center;
-              border-radius: 2px;
-              margin: 9px;
-              span {
-                font-size: 16px;
-                color: #fff;
-                @extend %ellipsis;
-              }
-            }
-          }
         }
       }
     }
-    .logo-img {
-      float: right;
-      width: 120px;
+  }
+  .header {
+    font-size: $font-size;
+    color: $text-color;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  .body {
+    @extend .clearfix;
+    width: 100%;
+    > div {
+      width: 25%;
+      float: left;
+      border-left: 2px solid;
+      padding-left: 10px;
+      > div:first-of-type {
+        font-size: $font-size + 4;
+        color: $text-color;
+      }
+      > div:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+      > div:last-of-type {
+        font-size: $font-size;
+        color: #b6bcc3;
+      }
+    }
+    .balance {
+      border-left-color: #70b340;
+    }
+    .buy-date {
+      border-left-color: #5974c8;
+    }
+    .dated-date {
+      border-left-color: #f79e2b;
+    }
+    .price {
+      border-left-color: #ef3a00;
     }
   }
-
-  /*商家卡管理*/
-  .membership-card-nav {
-    width: $width;
-    float: left;
-    background-color: #fff;
-    a {
-      display: block;
-      width: 100%;
+}
+/*会员卡详情*/
+.member-card-details {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  padding: 30px 40px;
+  background-color: #fff;
+  .back {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #333 {
+      right-width: 0;
+      bottom-width: 0;
+    }
+    cursor: pointer;
+    transform: rotate(-45deg);
+  }
+  .details {
+    @extend .clearfix;
+    > div {
+      $width: 160px;
+      $height: 36px;
+      float: left;
+      font-size: 0;
+      width: 50%;
       height: $height;
       line-height: $height;
-      text-align: center;
-      color: $text-info-color;
-      font-size: $font-size;
-      &.active,
-      &:hover {
-        background-color: $main-color;
-        color: #fff;
-      }
-    }
-  }
-  .membership-card-form {
-    $membership-card-form-height: 32px;
-    $div-space-between: 60px;
-    width: calc(100% - #{$width} - 20px);
-    float: right;
-    background-color: #fff;
-    padding: 30px 130px;
-    > div {
-      float: left;
-      width: calc(50% - #{$div-space-between} / 2);
-      min-width: 240px;
-      margin-bottom: 18px;
-      &:nth-of-type(2n + 1) {
-        margin-right: $div-space-between;
-      }
-      label:not(.error) {
-        display: block;
-        font-size: $font-size;
+      margin-bottom: 20px;
+      @media (max-width: 1280px) {
         width: 100%;
-        height: $membership-card-form-height;
-        line-height: $membership-card-form-height;
-        position: relative;
-        color: $text-color;
-        &.required {
-          &::before {
-            content: "*";
-            position: absolute;
-            left: -8px;
-            font-size: $font-size;
-            color: #f00;
-          }
-        }
       }
-      label.error {
+      &.intro {
         width: 100%;
-        display: block;
-        font-size: 12px;
-        height: 18px;
-        line-height: 18px;
-      }
-      input {
-        width: 100%;
-        display: block;
-        height: $membership-card-form-height + 2;
-        line-height: $membership-card-form-height;
-        border: 1px solid #bfbfbf;
-        font-size: $font-size;
-        color: #a7a7a7;
-        padding-right: 20px;
-        padding-left: 20px;
-        border-radius: 2px;
-        @extend %ellipsis;
-        &:focus {
-          border-color: darken(#bfbfbf, 80%);
-          outline: none;
-        }
-      }
-      select {
-        width: 100%;
-        height: $membership-card-form-height + 2;
-        line-height: $membership-card-form-height;
-        padding-left: 20px;
-        border: 1px solid #bfbfbf;
-        color: #a7a7a7;
-        font-size: $font-size;
-        cursor: pointer;
-        &:focus {
-          border-color: darken(#bfbfbf, 80%);
-          outline: none;
-        }
-        option {
-          height: 30px;
-          line-height: 30px;
-          padding-right: 20px;
-          padding-left: 20px;
-          color: $text-info-color;
-          font-size: $font-size;
-          cursor: pointer;
-        }
-      }
-      &.service-area-intro {
-        width: 100%;
-        textarea {
-          display: block;
-          min-width: 100%;
-          width: 100%;
-          max-width: 100%;
-          min-height: 100px;
-          height: 150px;
-          max-height: 150px;
-          line-height: $membership-card-form-height - 12;
-          border: 1px solid #bfbfbf;
-          font-size: $font-size;
-          color: #a7a7a7;
-          padding: 6px 20px;
-          border-radius: 2px;
-          &:focus {
-            border-color: darken(#bfbfbf, 80%);
-            outline: none;
+        height: auto;
+        > span {
+          &:last-of-type {
+            height: 130px;
+            line-height: 24px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            white-space: normal;
           }
         }
       }
-      &.cancel-confirm {
-        margin-top: 50px;
-        font-size: 0;
-        button {
-          display: inline-block;
-          vertical-align: middle;
-          font-size: $font-size;
-          color: #fff;
-          padding: 10px 32px;
-          text-align: center;
-          border-radius: 40px;
-          &:not(:last-of-type) {
-            margin-right: 40px;
-          }
-        }
-        .cancel {
-          background-color: #eaeff9;
-          &:hover {
-            background-color: darken(#eaeff9, 8%);
-          }
-          &:focus {
-            background-color: darken(#eaeff9, 14%);
-          }
-        }
-        .confirm {
-          background-color: $btn-bg-color;
-          &:hover {
-            background-color: darken($btn-bg-color, 8%);
-          }
-          &:focus {
-            background-color: darken($btn-bg-color, 14%);
-          }
-        }
-      }
-    }
-  }
-  .membership-card-info {
-    $div-space-between: 60px;
-    width: calc(100% - #{$width} - 20px);
-    float: right;
-    background-color: #fff;
-    padding: 5px 5px 110px;
-    .membership-card-category {
-      width: 100%;
-      text-align: center;
-      height: 40px;
-      line-height: 40px;
-      //margin-bottom: 15px;
-      color: $text-info-color;
-      font-size: $font-size;
-      font-weight: normal;
-      span {
+      > span {
+        height: $height;
+        line-height: $height;
         display: inline-block;
-        position: relative;
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50);
-          color: inherit;
-          background-color: currentColor;
-          width: 30px;
-          height: 1px;
+        vertical-align: middle;
+        font-size: $font-size;
+        color: $text-color;
+        &:first-of-type {
+          width: $width;
+          text-align: right;
+          margin-right: 20px;
         }
-        &::before {
-          left: -45px;
+        &:last-of-type {
+          width: calc(100% - #{$width} - 20px);
+          background-color: #eaeff9;
+          border-radius: 4px;
+          padding-right: 1em;
+          padding-left: 1em;
+          @extend %ellipsis;
         }
-        &::after {
-          right: -45px;
-        }
-      }
-    }
-    .membership-card-item {
-      $border-radius: 4px;
-      $padding-left: 16px;
-      position: relative;
-      float: left;
-      width: 240px;
-      height: 150px;
-      padding-left: $padding-left;
-      margin: 15px;
-      background-color: $main-content-bg-color;
-      border-radius: $border-radius;
-      color: $text-info-color;
-      font-size: $font-size - 2;
-      .name {
-        width: calc(100% - 40px);
-        height: 40px;
-        line-height: 40px;
-        margin-bottom: 4px;
-        font-size: 16px;
-        font-weight: normal;
-        @extend %ellipsis;
-      }
-      .type,
-      .allotted-time,
-      .price {
-        width: calc(100% - #{$padding-left});
-        height: 22px;
-        line-height: 22px;
-        font-size: $font-size - 2;
-        @extend %ellipsis;
-      }
-      .category {
-        position: absolute;
-        right: 0;
-        bottom: 5px;
-        width: calc(100% - #{$padding-left});
-        text-align: right;
-        height: 24px;
-        line-height: 24px;
-        padding-right: calc(#{$padding-left} / 2);
-        font-size: $font-size - 2;
-        @extend %ellipsis;
-      }
-      .close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: transparent;
-        width: 40px;
-        height: 40px;
-        border: $border-radius;
-        &:hover {
-          color: #eee;
-        }
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 30px;
-          height: 3px;
-          color: #fff;
-          background-color: currentColor;
-          border-radius: 3px;
-          transform-origin: center;
-        }
-        &::before {
-          transform: translate(-50%, -50%) rotate(45deg);
-        }
-        &::after {
-          transform: translate(-50%, -50%) rotate(135deg);
-        }
-      }
-    }
-    .membership-card-add-btn {
-      position: relative;
-      float: left;
-      width: 240px;
-      height: 150px;
-      margin: 15px;
-      border: 2px dashed #bfbfbf;
-      border-radius: 4px;
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 40px;
-        height: 5px;
-        background-color: $main-content-bg-color;
-        border-radius: 3px;
-      }
-      &::before {
-        transform: translate(-50%, -50%);
-      }
-      &::after {
-        transform: translate(-50%, -50%) rotate(90deg);
-        transform-origin: center;
       }
     }
   }
-
-
 }
