@@ -333,7 +333,7 @@ label:hover {
   opacity: .8;
 }
 
-#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .card-management-content .add-card-wrapper > div input, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-list-table tr th,
+#header .custom-menu li.user-menu img, #footer, .basic-info-form > div input, .handle-list .condition-list > div input, .handle-list .condition-list > div select, .record-list table.record-list-table thead tr th, .record-list table.record-list-table tbody tr td, .card-management-content .add-card-wrapper > div input, .card-management-content .add-card-wrapper > div select, .member-add-form > div input, .member-handle-list .member-condition-list > div input, .member-handle-list .member-condition-list > div select, .member-list-table tr th,
 .member-list-table tr td, .member-card-details .details > div > span:last-of-type {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1414,6 +1414,32 @@ label.error {
 .card-management-content .add-card-wrapper > div input:focus {
   border-color: black;
   outline: none;
+}
+.card-management-content .add-card-wrapper > div select {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 90px);
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  color: #a7a7a7;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+.card-management-content .add-card-wrapper > div select:focus {
+  border-color: black;
+  outline: none;
+}
+.card-management-content .add-card-wrapper > div select option {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #2b2b2b;
+  font-size: 14px;
+  cursor: pointer;
 }
 .card-management-content .add-card-wrapper > div.verification-code {
   position: relative;

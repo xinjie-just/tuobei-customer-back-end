@@ -1040,6 +1040,33 @@
           outline: none;
         }
       }
+      select {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - #{$add-card-form-width});
+        height: $add-card-form-height;
+        line-height: $add-card-form-height - 2;
+        border: 1px solid #bfbfbf;
+        font-size: $font-size;
+        color: #a7a7a7;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 2px;
+        @extend %ellipsis;
+        &:focus {
+          border-color: darken(#bfbfbf, 80%);
+          outline: none;
+        }
+        option {
+          height: 30px;
+          line-height: 30px;
+          padding-right: 20px;
+          padding-left: 20px;
+          color: $text-info-color;
+          font-size: $font-size;
+          cursor: pointer;
+        }
+      }
       &.verification-code {
         position: relative;
         input {
